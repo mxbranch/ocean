@@ -1,0 +1,14 @@
+.prose {
+  max-width: var(--prose-max-width, 80ch);
+}
+
+.prose p {
+  line-height: var(--prose-p-line-height, 1.4);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  max-width: var(--prose-header-max-width, 20ch);
+}

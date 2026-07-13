@@ -1,7 +1,24 @@
 body {
-  background-color: var(--grey-2);
+  font-family: var(--font-sans);
+  background-color: var(--grey-1);
+  color: var(--blue-12);
+  font-size: var(--step-0);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-header);
+  color: var(--blue-11);
 }
 
 h1 {
   font-size: var(--step-6);
+}
+h2 {
+  font-size: var(--step-5);
+}
+h3 {
+  font-size: var(--step-4);
 }
