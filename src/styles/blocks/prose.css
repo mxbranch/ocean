@@ -10,5 +10,5 @@
 .prose h2,
 .prose h3,
 .prose h4 {
-  max-width: var(--prose-header-max-width, 20ch);
+  text-wrap: pretty;
 }

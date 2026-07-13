@@ -1,12 +1,13 @@
 body {
   font-family: var(--font-sans);
-  background-color: var(--grey-1);
+  background-color: var(--blue-2);
   color: var(--blue-12);
   font-size: var(--step-0);
 
   display: flex;
   flex-direction: column;
   min-height: 100svh;
+  gap: var(--space-xl);
 }
 
 h1,
