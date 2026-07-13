@@ -23,4 +23,6 @@
 
   /* Custom pairs */
   --space-s-l: clamp(1.125rem, 0.5625rem + 2.5vw, 2.5rem);
+
+  --border-radius: 6px;
 }

@@ -1,0 +1,9 @@
+.font-mono {
+  font-family: var(--font-mono);
+}
+.font-sans {
+  font-family: var(--font-sans);
+}
+.font-header {
+  font-family: var(--font-header);
+}

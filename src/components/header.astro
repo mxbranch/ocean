@@ -1,0 +1,48 @@
+---
+import Bsky from '#/components/icon/bsky.astro'
+import Codeberg from '#/components/icon/codeberg.astro'
+// #/styles/blocks/header.css
+
+type NavLink = {
+  href: string
+  label: string
+}
+
+const pathname = Astro.url.pathname
+
+const navigationLinks: NavLink[] = [
+  {
+    href: '/',
+    label: 'Home',
+  },
+  {
+    href: '/cv',
+    label: 'CV',
+  },
+]
+---
+
+<header class="header">
+  <div class="container header__title">
+    <a href="/" class="header__title__link">D. R. Branch</a>
+  </div>
+  <nav class="container">
+    {
+      navigationLinks.map((link) => (
+        <a href={link.href} data-current={pathname === link.href}>
+          {link.label}
+        </a>
+      ))
+    }
+    <a
+      class="float-right"
+      href="https://bsky.app/profile/mxbranch.bsky.social"
+      target="_blank"
+    >
+      <Bsky />
+    </a>
+    <a href="https://codeberg.org/mxbranch" target="_blank">
+      <Codeberg />
+    </a>
+  </nav>
+</header>

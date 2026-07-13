@@ -3,6 +3,10 @@ body {
   background-color: var(--grey-1);
   color: var(--blue-12);
   font-size: var(--step-0);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
 }
 
 h1,
@@ -14,11 +18,14 @@ h4 {
 }
 
 h1 {
+  font-size: 4rem;
   font-size: var(--step-6);
 }
 h2 {
+  font-size: 3.2rem;
   font-size: var(--step-5);
 }
 h3 {
+  font-size: 2.6rem;
   font-size: var(--step-4);
 }

@@ -1,0 +1,21 @@
+.highlight {
+  position: relative;
+  display: inline;
+  isolation: isolate;
+  color: var(--highlight-color, var(--blue-10));
+  font-weight: var(--highlight-weight, 600);
+}
+
+.highlight:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: oklch(
+    from var(--highlight-background-color, var(--blue-10)) l c h / 0.1
+  );
+  margin-inline: -0.1ch;
+  margin-block: 1px;
+  transform: skewY(2deg);
+  z-index: -10;
+  border-radius: var(--border-radius);
+}

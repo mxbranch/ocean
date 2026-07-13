@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets'
+import bocean from '#/assets/bocean.jpg'
+// #/styles/blocks/footer.css
+---
+
+<footer class="footer | float-bottom font-mono">
+  <div class="container">
+    <Image
+      class="footer__illustration"
+      src={bocean}
+      alt="The Bocean"
+      quality="mid"
+    />
+    <div class="footer__text | repel">
+      <div>A better, more human web is possible!</div>
+      <div>
+        Made with 💙 on the South Coast of the UK - {new Date().getFullYear()}
+      </div>
+    </div>
+  </div>
+</footer>

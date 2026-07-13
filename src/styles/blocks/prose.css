@@ -1,5 +1,5 @@
 .prose {
-  max-width: var(--prose-max-width, 80ch);
+  max-width: var(--prose-max-width, 65ch);
 }
 
 .prose p {
