@@ -1,0 +1,10 @@
+{
+  "languages": {
+    "Astro": {
+      "prettier": {
+        "allowed": true,
+        "plugins": ["prettier-plugin-astro"],
+      },
+    },
+  },
+}
