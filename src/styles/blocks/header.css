@@ -21,7 +21,7 @@ a.header__title__link:hover {
   color: var(--blue-11);
 }
 
-.header nav {
+.header__nav {
   display: flex;
   padding-inline: 0em;
   border: 1px solid var(--blue-11);
