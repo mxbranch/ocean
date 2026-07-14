@@ -21,6 +21,11 @@ a.header__title__link:hover {
   color: var(--blue-11);
 }
 
+.header__navbar {
+  display: flex;
+  gap: var(--space-s);
+}
+
 .header__nav {
   display: flex;
   padding-inline: 0em;
@@ -29,7 +34,7 @@ a.header__title__link:hover {
   overflow: clip;
 }
 
-a.header__nav__link {
+.header__nav__link {
   text-decoration: none;
   color: var(--blue-11);
   padding-block: var(--space-2xs);
@@ -39,18 +44,19 @@ a.header__nav__link {
   font-size: var(--step-0);
   transition-property: background-color;
   transition-duration: var(--transition-m);
+  align-items: center;
 }
 
-a.header__nav__link:hover {
+.header__nav__link:hover {
   background-color: var(--blue-3);
 }
 
-a.header__nav__link[data-current='true'] {
+.header__nav__link[data-current='true'] {
   background-color: var(--blue-11);
   color: var(--blue-1);
 }
 
-a.header__nav__link > svg {
+.header__nav__link > svg {
   fill: var(--blue-11);
   aspect-ratio: 1/1;
   width: 1rem;

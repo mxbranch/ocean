@@ -1,10 +1,20 @@
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
 
 body {
   margin: 0;
   padding: 0;
+  min-height: 100svh;
+  line-height: 1.5;
 }
 
 h1,
@@ -17,7 +27,46 @@ blockquote {
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+  line-height: 1.1;
+}
+
 a:not([class]) {
   text-decoration-skip-ink: auto;
   color: currentColor;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+:focus-visible {
+  outline: 3px solid CanvasText;
+  box-shadow: 0 0 0 5px Canvas;
+  outline-offset: 1px;
+}
+
+:focus-visible,
+:target {
+  scroll-margin-block: 8vh;
 }

@@ -9,3 +9,7 @@
 .center {
   margin-inline: auto;
 }
+
+.expand {
+  flex-grow: 1;
+}

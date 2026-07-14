@@ -1,6 +1,7 @@
 ---
 import Bsky from '#/components/icon/bsky.astro'
 import Codeberg from '#/components/icon/codeberg.astro'
+import ModeToggle from '#/components/mode-toggle.astro'
 // #/styles/blocks/header.css
 
 type NavLink = {
@@ -30,8 +31,8 @@ const navigationLinks: NavLink[] = [
   <div class="container header__title">
     <a href="/" class="header__title__link">D. R. Branch</a>
   </div>
-  <div class="container">
-    <nav class="header__nav">
+  <div class="container header__navbar">
+    <nav class="header__nav expand">
       {
         navigationLinks.map((link) => (
           <a
@@ -58,5 +59,8 @@ const navigationLinks: NavLink[] = [
         <Codeberg />
       </a>
     </nav>
+    <div class="header__nav">
+      <ModeToggle />
+    </div>
   </div>
 </header>

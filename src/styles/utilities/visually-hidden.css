@@ -1,0 +1,15 @@
+/*
+Adapted from '@acab/reset.css'
+https://github.com/mayank99/reset.css/blob/main/package/index.css
+*/
+
+.visually-hidden:not(:focus-within, :active) {
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+  user-select: none !important;
+}
