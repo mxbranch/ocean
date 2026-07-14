@@ -47,6 +47,11 @@ a:not([class]):hover {
   color: var(--blue-10);
 }
 
+strong,
+em {
+  color: var(--blue-11);
+}
+
 blockquote {
   font-size: var(--step-0);
   color: var(--blue-11);
