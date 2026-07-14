@@ -1,33 +1,13 @@
 .prose {
   max-width: var(--prose-max-width, 65ch);
+  word-break: break-word;
 }
 
-.prose p {
-  line-height: var(--prose-p-line-height, 1.4);
+.prose .prose__fullwidth {
+  inline-size: calc(100cqi);
 }
 
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4 {
-  text-wrap: pretty;
-}
-
-.prose blockquote {
-  font-size: var(--step-0);
-  color: var(--blue-11);
-  background-color: var(--blue-3);
-  border-radius: var(--border-radius);
-  border-inline-start: var(--space-3xs) solid var(--blue-10);
-  padding-inline-start: var(--space-l);
-  padding-block: var(--space-s);
-  font-style: italic;
-}
-
-.prose blockquote > .blockquote__credit {
-  font-family: var(--font-mono);
-  color: var(--blue-10);
-  font-size: var(--step--1);
-  font-style: normal;
-  margin-block-start: var(--space-2xs);
+.prose.center .prose__fullwidth {
+  inline-size: calc(100cqi);
+  margin-inline-start: calc(50% - 50cqi);
 }
