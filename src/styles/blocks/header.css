@@ -6,16 +6,22 @@
   padding-block: var(--space-l, 3em);
 }
 
-.header__title__link {
+a.header__title__link {
   font-size: 3rem;
   font-size: var(--step-5);
   font-family: var(--font-header);
   font-weight: 600;
   color: var(--blue-10);
   text-decoration: none;
+  transition-property: color;
+  transition-duration: var(--transition-m);
 }
 
-.header > nav {
+a.header__title__link:hover {
+  color: var(--blue-11);
+}
+
+.header nav {
   display: flex;
   padding-inline: 0em;
   border: 1px solid var(--blue-11);
@@ -23,7 +29,7 @@
   overflow: clip;
 }
 
-.header > nav > a {
+a.header__nav__link {
   text-decoration: none;
   color: var(--blue-11);
   padding-block: var(--space-2xs);
@@ -31,18 +37,20 @@
   display: inline-flex;
   gap: var(--space-xs);
   font-size: var(--step-0);
+  transition-property: background-color;
+  transition-duration: var(--transition-m);
 }
 
-.header > nav > a:hover {
+a.header__nav__link:hover {
   background-color: var(--blue-3);
 }
 
-.header > nav > a[data-current='true'] {
+a.header__nav__link[data-current='true'] {
   background-color: var(--blue-11);
   color: var(--blue-1);
 }
 
-.header > nav > a > svg {
+a.header__nav__link > svg {
   fill: var(--blue-11);
   aspect-ratio: 1/1;
   width: 1rem;

@@ -19,6 +19,10 @@ const navigationLinks: NavLink[] = [
     href: '/cv',
     label: 'CV',
   },
+  {
+    href: '/projects',
+    label: 'Projects',
+  },
 ]
 ---
 
@@ -26,23 +30,33 @@ const navigationLinks: NavLink[] = [
   <div class="container header__title">
     <a href="/" class="header__title__link">D. R. Branch</a>
   </div>
-  <nav class="container">
-    {
-      navigationLinks.map((link) => (
-        <a href={link.href} data-current={pathname === link.href}>
-          {link.label}
-        </a>
-      ))
-    }
-    <a
-      class="float-right"
-      href="https://bsky.app/profile/mxbranch.bsky.social"
-      target="_blank"
-    >
-      <Bsky />
-    </a>
-    <a href="https://codeberg.org/mxbranch" target="_blank">
-      <Codeberg />
-    </a>
-  </nav>
+  <div class="container">
+    <nav>
+      {
+        navigationLinks.map((link) => (
+          <a
+            href={link.href}
+            class="header__nav__link"
+            data-current={pathname === link.href}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+      <a
+        href="https://bsky.app/profile/mxbranch.bsky.social"
+        class="header__nav__link float-right"
+        target="_blank"
+      >
+        <Bsky />
+      </a>
+      <a
+        href="https://codeberg.org/mxbranch"
+        class="header__nav__link"
+        target="_blank"
+      >
+        <Codeberg />
+      </a>
+    </nav>
+  </div>
 </header>
