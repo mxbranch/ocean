@@ -37,7 +37,7 @@ const navigationLinks: NavLink[] = [
           <a
             href={link.href}
             class="header__nav__link"
-            data-current={pathname === link.href}
+            data-current={pathname === link.href || undefined}
           >
             {link.label}
           </a>
