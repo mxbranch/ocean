@@ -10,12 +10,10 @@ body {
   gap: var(--space-xl);
 }
 
-h1,
-h2,
-h3,
-h4 {
+:is(h1, h2, h3, h4) {
   font-family: var(--font-header);
   color: var(--blue-11);
+  text-wrap: pretty;
 }
 
 h1 {
@@ -29,4 +27,41 @@ h2 {
 h3 {
   font-size: 2.6rem;
   font-size: var(--step-4);
+}
+
+p {
+  line-height: var(--p-line-height, 1.4);
+}
+
+a:not([class]) {
+  text-decoration-color: var(--blue-8);
+  text-decoration-thickness: 2px;
+  transition-property: color text-underline-offset;
+  transition-duration: var(--transition-m);
+  text-underline-offset: 0.1lh;
+  color: var(--blue-11);
+}
+
+a:not([class]):hover {
+  text-underline-offset: 0.2lh;
+  color: var(--blue-10);
+}
+
+blockquote {
+  font-size: var(--step-0);
+  color: var(--blue-11);
+  background-color: var(--blue-3);
+  border-radius: var(--border-radius);
+  border-inline-start: var(--space-3xs) solid var(--blue-10);
+  padding-inline: var(--space-l);
+  padding-block: var(--space-s);
+  font-style: italic;
+}
+
+blockquote > .blockquote__credit {
+  font-family: var(--font-mono);
+  color: var(--blue-10);
+  font-size: var(--step--1);
+  font-style: normal;
+  margin-block-start: var(--space-2xs);
 }
