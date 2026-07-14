@@ -59,7 +59,6 @@ blockquote {
 }
 
 blockquote > .blockquote__credit {
-  font-family: var(--font-mono);
   color: var(--blue-10);
   font-size: var(--step--1);
   font-style: normal;
