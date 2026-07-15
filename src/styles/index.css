@@ -24,4 +24,5 @@
 @import './blocks/header.css' layer(block);
 @import './blocks/hero.css' layer(block);
 @import './blocks/mode-toggle.css' layer(block);
+@import './blocks/project-card.css' layer(block);
 @import './blocks/prose.css' layer(block);

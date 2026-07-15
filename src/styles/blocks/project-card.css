@@ -1,0 +1,41 @@
+.projectcard {
+  --flow-spacing: var(--space-xs);
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+  padding: var(--space-xs);
+}
+
+.projectcard__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+}
+
+.projectcard__link {
+  display: flex;
+  align-items: center;
+}
+
+.projectcard__link:has(+ *:hover) {
+  text-underline-offset: 0.2lh;
+  color: var(--highlight);
+}
+
+/*
+<div class="grid" data-layout="thirds">
+  <article class="projectcard flow">
+    <a href="projectcard__link" href="/projects/blah">
+      <Image class="projectcard__image" src={drb} alt="D. R. Branch" />
+    </a>
+    <div class="projectcard__link">
+      <a href="projectcard__link" href="/projects/blah">
+        Working On Myself
+      </a>
+    </div>
+  </article>
+  <article class="projectcard flow">Card</article>
+  <article class="projectcard flow">Card</article>
+</div>
+*/

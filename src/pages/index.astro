@@ -1,6 +1,7 @@
 ---
 import Root from '#/layout/root.astro'
 import drb from '#/assets/drb.jpg'
+import construction from '#/assets/underconstruction.gif'
 import { Image } from 'astro:assets'
 ---
 
@@ -9,7 +10,7 @@ import { Image } from 'astro:assets'
     UK Web Designer who loves <span class="highlight">accessibility</span>,
     standards, and designing for <span class="highlight">humans</span>
   </h1>
-  <div class="hero with-sidebar">
+  <section class="hero with-sidebar">
     <div class="flow">
       <p class="text-lg">
         Hi! I'm D. R. Branch, a web designer tk tk tk tk tk tk tk tk tk tk tk tk
@@ -33,13 +34,9 @@ import { Image } from 'astro:assets'
       <Image class="hero__image" src={drb} alt="D. R. Branch" loading="eager" />
       <p class="text-sm">Portait Of The Author As A Web Designer</p>
     </div>
-  </div>
-  <div class="flow">
+  </section>
+  <section class="flow">
     <h2>Project Overviews</h2>
-    <div class="grid" data-layout="thirds">
-      <div>Card</div>
-      <div>Card</div>
-      <div>Card</div>
-    </div>
-  </div>
-</Root>
+    <Image src={construction} alt="Under Construction" class="center" />
+  </section></Root
+>
