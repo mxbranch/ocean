@@ -1,7 +1,7 @@
 body {
   font-family: var(--font-sans);
-  background-color: var(--blue-2);
-  color: var(--blue-12);
+  background-color: var(--paper);
+  color: var(--ink);
   font-size: var(--step-0);
 
   display: flex;
@@ -11,7 +11,7 @@ body {
 
 :is(h1, h2, h3, h4) {
   font-family: var(--font-header);
-  color: var(--blue-11);
+  color: var(--lowlight);
   text-wrap: balance;
 }
 
@@ -29,37 +29,37 @@ h3 {
 }
 
 a:not([class]) {
-  text-decoration-color: var(--blue-8);
+  text-decoration-color: var(--highlight);
   text-decoration-thickness: 2px;
   transition-property: color text-underline-offset;
   transition-duration: var(--transition-m);
   text-underline-offset: 0.1lh;
-  color: var(--blue-11);
+  color: var(--lowlight);
 }
 
 a:not([class]):hover {
   text-underline-offset: 0.2lh;
-  color: var(--blue-10);
+  color: var(--highlight);
 }
 
 strong,
 em {
-  color: var(--blue-11);
+  color: var(--lowlight);
 }
 
 blockquote {
   font-size: var(--step-0);
-  color: var(--blue-11);
-  background-color: var(--blue-3);
+  color: var(--lowlight);
+  background-color: var(--surface);
   border-radius: var(--border-radius);
-  border-inline-start: var(--space-3xs) solid var(--blue-10);
+  border-inline-start: var(--space-3xs) solid var(--highlight);
   padding-inline: var(--space-l);
   padding-block: var(--space-s);
   font-style: italic;
 }
 
 blockquote > .blockquote__credit {
-  color: var(--blue-10);
+  color: var(--highlight);
   font-size: var(--step--1);
   font-style: normal;
   margin-block-start: var(--space-2xs);

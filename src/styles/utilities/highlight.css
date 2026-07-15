@@ -2,7 +2,7 @@
   position: relative;
   display: inline;
   isolation: isolate;
-  color: var(--highlight-color, var(--blue-10));
+  color: var(--highlight-color, var(--highlight));
   font-weight: var(--highlight-weight, 600);
 }
 
@@ -11,7 +11,7 @@
   position: absolute;
   inset: 0;
   background-color: oklch(
-    from var(--highlight-background-color, var(--blue-10)) l c h / 0.1
+    from var(--highlight-background-color, var(--highlight)) l c h / 0.1
   );
   margin-inline: -0.1ch;
   margin-block: 1px;

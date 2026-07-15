@@ -14,6 +14,7 @@
 @import './compositions/grid.css' layer(composition);
 @import './compositions/repel.css' layer(composition);
 
+@import './utilities/font.css' layer(utility);
 @import './utilities/flex.css' layer(utility);
 @import './utilities/highlight.css' layer(utility);
 @import './utilities/visually-hidden.css' layer(utility);
