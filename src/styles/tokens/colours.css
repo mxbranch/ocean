@@ -3,7 +3,7 @@
   --ink: oklch(0.353 0.103 252);
   --highlight: oklch(0.587 0.193 252);
   --lowlight: oklch(0.471 0.155 252);
-  --surface: oklch(0.958 0.035 252);
+  --surface: oklch(0.936 0.053 252);
 }
 
 :root.dark {
