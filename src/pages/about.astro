@@ -3,46 +3,82 @@ import Root from '#/layout/root.astro'
 ---
 
 <Root>
-  <div class="prose flow">
-    <h1>
-      Culpa dolore eum ipsum soluta beatae <span class="highlight">
-        aliquid
-      </span> adipisci.
-    </h1>
+  <div class="flow">
+    <h1>About Me</h1>
     <p>
-      Praesentium et ab vitae et. Voluptas nemo est dolore natus culpa porro ut.
-      Culpa dolore eum <a href="/">ipsum soluta</a> beatae aliquid <em>
-        adipisci
-      </em>. Voluptatibus inventore vel quis vel <strong>incidunt.</strong>
+      I started working with the web at the tender age of 13 making websites for
+      serious literature<sup>*</sup>. Since then I've studied electronic
+      hardware design at Southampton University, worked as a secondary school
+      teacher, and returned to web development.
     </p>
-
-    <p>
-      Illum ut praesentium eaque. Voluptatem veritatis quod soluta. Vel ea nemo
-      vero voluptatibus esse commodi.
-    </p>
-
-    <blockquote class="prose__fullwidth">
-      <p>Lorem ipsum dolor sit amet</p>
-    </blockquote>
-
-    <p>
-      Voluptate voluptates doloremque ut asperiores sit minus. Iure repellendus
-      officiis veniam. Eveniet et ratione libero harum voluptatem distinctio.
-      Tempore omnis porro est non alias officiis. Quam officiis accusamus est
-      quasi beatae qui velit. A qui voluptas autem consequuntur.
-    </p>
-
-    <p>
-      Officiis et atque similique dolorem in. Expedita et cupiditate quasi
-      ducimus quis magni excepturi voluptate. Sit inventore sunt sit. Maxime ut
-      sint et error voluptatem sint recusandae aspernatur. Doloribus quia nisi
-      qui est voluptas vitae. Voluptatem totam aut saepe soluta.
-    </p>
-
-    <p>
-      Natus reiciendis aut voluptatem et incidunt dolorem. Sint vel sed hic
-      laborum illum sit cupiditate. Ad explicabo omnis laboriosam esse est
-      minus. Et sed earum placeat facilis qui laudantium.
-    </p>
+    <p class="text-sm">* Nintendo fan fiction</p>
+    <p><a href="/">Download my CV as a PDF here.</a></p>
   </div>
+  <section class="with-sidebar">
+    <div class="sidebar flow">
+      <h2>Work History</h2>
+    </div>
+    <div class="flow">
+      <h3>Under One Cloud</h3>
+      <span class="text-sm text-lowlight">
+        Lead Software Developer, 2022 to 2026
+      </span>
+      <p>
+        Initially hired to maintain legacy .NET Framework projects, and helped
+        transition the company into providing web development services for our
+        clients. Led teams and worked solo to ship full stack web applications,
+        marketing websites, and software integrations.
+      </p>
+      <p>Second paragraph tk tk tk tk tk tk tk</p>
+      <h3>Cantell School</h3>
+      <span class="text-sm text-lowlight">
+        Computer Science Teacher, 2016 to 2022
+      </span>
+      <p>
+        Led the GCSE Computer Science curriculum with students across all
+        classes performing above the national average every year. Helped
+        redevelop the KS3 curriculum on the topics of programming and computer
+        hardware, including creating a syllabus and lesson plans to teach
+        programming fundamentals for use by other staff members.
+      </p>
+    </div>
+  </section>
+  <section class="with-sidebar">
+    <div class="sidebar flow">
+      <h2>Skills and Interests</h2>
+      <p class="text-sm text-lowlight">
+        A non-exhaustive list of tools I work with. I am <em>very willing</em> to
+        pick up new languages, frameworks, and libraries.
+      </p>
+    </div>
+    <div class="flow">
+      <h3>Web Fundamentals</h3>
+      <ul role="list">
+        <li>Use of semantic HTML</li>
+        <li>Modern CSS features and methodologies</li>
+        <li>Tailwind</li>
+        <li>Vanilla JavaScript + TypeScript</li>
+      </ul>
+      <h3>Frameworks</h3>
+      <ul role="list">
+        <li>React + Next.js (App Router + Server Components)</li>
+        <li>Astro</li>
+      </ul>
+      <h3>Back End</h3>
+      <ul role="list">
+        <li>Node</li>
+        <li>REST APIs</li>
+        <li>ORMs (Drizzle, Prisma)</li>
+        <li>SQL + MySQL/MariaDB/Postgres</li>
+        <li>Docker</li>
+        <li>Linux Servers</li>
+      </ul>
+      <h3>Design</h3>
+      <ul role="list">
+        <li>Design Systems and Component Libraries</li>
+        <li>Accessibility in Web Design</li>
+        <li></li>
+      </ul>
+    </div>
+  </section>
 </Root>

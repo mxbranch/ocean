@@ -64,3 +64,11 @@ blockquote > .blockquote__credit {
   font-style: normal;
   margin-block-start: var(--space-2xs);
 }
+
+ul {
+  padding: 0;
+}
+
+ul[role='list'] {
+  list-style: none;
+}
