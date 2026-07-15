@@ -61,8 +61,7 @@ textarea:not([rows]) {
 }
 
 :focus-visible {
-  outline: 3px solid CanvasText;
-  box-shadow: 0 0 0 5px Canvas;
+  outline: 2px solid var(--highlight);
   outline-offset: 1px;
 }
 
