@@ -1,3 +1,9 @@
 .flow > * + * {
   margin-block-start: var(--flow-spacing, 1.2em);
 }
+
+.layout-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}

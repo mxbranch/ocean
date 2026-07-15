@@ -9,7 +9,8 @@
   inline-size: 100%;
   height: var(--footer-illustration-height, 16rem);
   object-fit: cover;
-  object-position: 50% 60%;
+  object-position: var(--footer-illustration-x, 50%)
+    var(--footer-illustration-y, 50%);
   border-radius: var(--border-radius);
 }
 

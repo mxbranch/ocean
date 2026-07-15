@@ -9,11 +9,12 @@
 
 @import './global.css' layer(global);
 
-@import './compositions/container.css' layer(composition);
 @import './compositions/flow.css' layer(composition);
 @import './compositions/grid.css' layer(composition);
 @import './compositions/repel.css' layer(composition);
+@import './compositions/sidebar.css' layer(composition);
 
+@import './utilities/container.css' layer(utility);
 @import './utilities/font.css' layer(utility);
 @import './utilities/flex.css' layer(utility);
 @import './utilities/highlight.css' layer(utility);
@@ -21,5 +22,6 @@
 
 @import './blocks/footer.css' layer(block);
 @import './blocks/header.css' layer(block);
+@import './blocks/hero.css' layer(block);
 @import './blocks/mode-toggle.css' layer(block);
 @import './blocks/prose.css' layer(block);

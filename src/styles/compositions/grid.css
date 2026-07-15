@@ -9,5 +9,5 @@
 
 .grid[data-layout='thirds'] {
   --grid-placement: auto-fit;
-  --grid-min-item-size: clamp(16rem, 33%, 28rem);
+  --grid-min-item-size: clamp(16rem, 33%, 18rem);
 }

@@ -1,48 +1,45 @@
 ---
 import Root from '#/layout/root.astro'
+import drb from '#/assets/drb.jpg'
+import { Image } from 'astro:assets'
 ---
 
 <Root>
-  <div class="prose flow center">
-    <h1>
-      Culpa dolore eum ipsum soluta beatae <span class="highlight">
-        aliquid
-      </span> adipisci.
-    </h1>
-    <p>
-      Praesentium et ab vitae et. Voluptas nemo est dolore natus culpa porro ut.
-      Culpa dolore eum <a href="/">ipsum soluta</a> beatae aliquid <em>
-        adipisci
-      </em>. Voluptatibus inventore vel quis vel <strong>incidunt.</strong>
-    </p>
+  <h1>
+    UK Web Designer who loves <span class="highlight">accessibility</span>,
+    standards, and designing for <span class="highlight">humans</span>
+  </h1>
+  <div class="hero with-sidebar">
+    <div class="flow">
+      <p class="text-lg">
+        Hi! I'm D. R. Branch, a web designer tk tk tk tk tk tk tk tk tk tk tk tk
+        tk
+      </p>
+      <p>
+        (Professional history) Harum in blanditiis vel. Voluptatum sequi et
+        molestiae vitae qui est facilis. Quibusdam omnis eum ipsam et quibusdam.
+        Provident quia voluptas aperiam quod vel adipisci. Delectus culpa vel
+        sit.
+      </p>
 
-    <p>
-      Illum ut praesentium eaque. Voluptatem veritatis quod soluta. Vel ea nemo
-      vero voluptatibus esse commodi.
-    </p>
-
-    <blockquote class="prose__fullwidth">
-      <p>Lorem ipsum dolor sit amet</p>
-    </blockquote>
-
-    <p>
-      Voluptate voluptates doloremque ut asperiores sit minus. Iure repellendus
-      officiis veniam. Eveniet et ratione libero harum voluptatem distinctio.
-      Tempore omnis porro est non alias officiis. Quam officiis accusamus est
-      quasi beatae qui velit. A qui voluptas autem consequuntur.
-    </p>
-
-    <p>
-      Officiis et atque similique dolorem in. Expedita et cupiditate quasi
-      ducimus quis magni excepturi voluptate. Sit inventore sunt sit. Maxime ut
-      sint et error voluptatem sint recusandae aspernatur. Doloribus quia nisi
-      qui est voluptas vitae. Voluptatem totam aut saepe soluta.
-    </p>
-
-    <p>
-      Natus reiciendis aut voluptatem et incidunt dolorem. Sint vel sed hic
-      laborum illum sit cupiditate. Ad explicabo omnis laboriosam esse est
-      minus. Et sed earum placeat facilis qui laudantium.
-    </p>
+      <p>
+        (A lil bit about me) Qui in atque iste est magnam quo autem. Est et
+        dolorum magnam nihil aut pariatur aut est. Voluptatem aut possimus
+        officiis ea maxime accusamus libero. Facere rerum vel enim vel
+        voluptatem.
+      </p>
+    </div>
+    <div class="sidebar">
+      <Image class="hero__image" src={drb} alt="D. R. Branch" loading="eager" />
+      <p class="text-sm">Portait Of The Author As A Web Designer</p>
+    </div>
+  </div>
+  <div class="flow">
+    <h2>Project Overviews</h2>
+    <div class="grid" data-layout="thirds">
+      <div>Card</div>
+      <div>Card</div>
+      <div>Card</div>
+    </div>
   </div>
 </Root>
