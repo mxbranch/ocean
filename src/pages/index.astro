@@ -30,13 +30,20 @@ import { Image } from 'astro:assets'
         voluptatem.
       </p>
     </div>
-    <div class="sidebar">
+    <div class="sidebar flow">
       <Image class="hero__image" src={drb} alt="D. R. Branch" loading="eager" />
-      <p class="text-sm">Portait Of The Author As A Web Designer</p>
+      <p class="text-sm text-lowlight">
+        Portait Of The Author As A Web Designer
+      </p>
     </div>
   </section>
   <section class="flow">
     <h2>Project Overviews</h2>
-    <Image src={construction} alt="Under Construction" class="center" />
+    <Image
+      src={construction}
+      alt="Under Construction"
+      class="center"
+      loading="eager"
+    />
   </section></Root
 >
