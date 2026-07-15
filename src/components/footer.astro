@@ -5,16 +5,17 @@ import bocean from '#/assets/bocean.jpg'
 ---
 
 <footer class="footer | float-bottom">
-  <div class="container">
+  <div class="footer__waves"></div>
+  <div class="container footer__content">
     <Image
       class="footer__illustration"
       src={bocean}
       alt="The Bocean"
       quality="mid"
-      loading="eager"
+      loading="lazy"
       style="--footer-illustration-y: 60%;"
     />
-    <div class="footer__text | repel">
+    <div class="footer__text repel">
       <a href="/colophon">Colophon</a>
       <div>A better, more human web is possible!</div>
       <div>

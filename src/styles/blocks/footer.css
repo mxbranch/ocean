@@ -3,6 +3,26 @@
   flex-direction: column;
   gap: 0;
   color: var(--lowlight);
+  width: 100%;
+  position: relative;
+  isolation: isolate;
+}
+
+.footer__waves {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 10%,
+    var(--surface)
+  );
+  mask-image: url('/bank-note.svg');
+  z-index: -10;
+}
+
+.footer__content {
+  background-color: var(--paper);
 }
 
 .footer__illustration {
