@@ -3,6 +3,12 @@ import Head from '#/components/head.astro'
 import Header from '#/components/header.astro'
 import Footer from '#/components/footer.astro'
 import '#/styles/index.css'
+
+import type { Props as HeadProps } from '#/components/head.astro'
+
+interface Props extends HeadProps {}
+
+const { title } = Astro.props
 ---
 
 <script is:inline>
@@ -30,7 +36,7 @@ import '#/styles/index.css'
 </script>
 
 <html lang="en">
-  <Head />
+  <Head title={title} />
   <body>
     <Header />
     <main class="container layout-flow">
