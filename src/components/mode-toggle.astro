@@ -1,10 +1,16 @@
 ---
 import SunMoon from './icon/sun-moon.astro'
 
+interface Props {
+  class?: string
+}
+
+const { class: propsClass } = Astro.props
+
 // #/styles/blocks/mode-toggle.css
 ---
 
-<button id="theme-toggle" class="toggle header__nav__link">
+<button id="theme-toggle" class={`toggle ${propsClass}`.trim()}>
   <SunMoon />
   <span class="visually-hidden">Toggle Colour Theme</span>
 </button>

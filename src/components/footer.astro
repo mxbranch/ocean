@@ -1,6 +1,12 @@
 ---
 import { Image } from 'astro:assets'
 import bocean from '#/assets/bocean.jpg'
+
+import Bsky from '#/components/icon/bsky.astro'
+import Codeberg from '#/components/icon/codeberg.astro'
+import Linkedin from '#/components/icon/linkedin.astro'
+import ModeToggle from '#/components/mode-toggle.astro'
+
 // #/styles/blocks/footer.css
 ---
 
@@ -15,11 +21,39 @@ import bocean from '#/assets/bocean.jpg'
       loading="lazy"
       style="--footer-illustration-y: 60%;"
     />
-    <div class="footer__text repel">
-      <a href="/colophon">Colophon</a>
-      <div>A better, more human web is possible!</div>
-      <div>
-        Made with 💙 on the South Coast of the UK - {new Date().getFullYear()}
+    <div class="footer__rows">
+      <div class="repel">
+        <div class="footer__icons cluster">
+          <a
+            href="https://bsky.app/profile/mxbranch.bsky.social"
+            class="footer__icons__link"
+            target="_blank"
+          >
+            <Bsky />
+          </a>
+          <a
+            href="https://codeberg.org/mxbranch"
+            class="footer__icons__link"
+            target="_blank"
+          >
+            <Codeberg />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/d-r-branch/"
+            class="footer__icons__link"
+            target="_blank"
+          >
+            <Linkedin />
+          </a>
+        </div>
+        <ModeToggle class="footer__icons__link" />
+      </div>
+      <div class="footer__text repel">
+        <a href="/colophon">Colophon</a>
+        <div>A better, more human web is possible!</div>
+        <div>
+          Made with 💙 on the South Coast of the UK - {new Date().getFullYear()}
+        </div>
       </div>
     </div>
   </div>

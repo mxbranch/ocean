@@ -9,6 +9,7 @@
 
 @import './global.css' layer(global);
 
+@import './compositions/cluster.css' layer(composition);
 @import './compositions/flow.css' layer(composition);
 @import './compositions/grid.css' layer(composition);
 @import './compositions/repel.css' layer(composition);
