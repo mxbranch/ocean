@@ -9,6 +9,12 @@ body {
   gap: var(--space-xl);
 }
 
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
 :is(h1, h2, h3, h4) {
   font-family: var(--font-header);
   color: var(--lowlight);
@@ -40,6 +46,10 @@ a:not([class]) {
 a:not([class]):hover {
   text-underline-offset: 0.2lh;
   color: var(--highlight);
+}
+
+a:visited {
+  color: unset;
 }
 
 strong,

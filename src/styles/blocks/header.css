@@ -1,6 +1,6 @@
 .header__title {
   padding-block: var(--space-l);
-  border-block-end: 2px solid var(--highlight);
+  border-block-end: var(--space-3xs) solid var(--highlight);
 }
 
 a.header__title__link {
@@ -8,14 +8,14 @@ a.header__title__link {
   font-size: var(--step-4);
   font-family: var(--font-header);
   font-weight: 600;
-  color: var(--highlight);
+  color: var(--lowlight);
   text-decoration: none;
   transition-property: color;
   transition-duration: var(--transition-m);
 }
 
 a.header__title__link:hover {
-  color: var(--lowlight);
+  color: var(--highlight);
 }
 
 .header__nav {
