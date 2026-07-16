@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
 
+import netlify from '@astrojs/netlify';
+
 // https://astro.build/config
 export default defineConfig({
   fonts: [
@@ -19,4 +21,6 @@ export default defineConfig({
       weights: ['300 700'],
     },
   ],
+
+  adapter: netlify(),
 })
