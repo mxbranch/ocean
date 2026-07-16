@@ -87,3 +87,10 @@ ul[role='list'] {
   background-color: var(--surface);
   color: var(--lowlight);
 }
+
+.construction {
+  width: 100cqi;
+  height: auto;
+  max-width: 512px;
+  image-rendering: pixelated;
+}
