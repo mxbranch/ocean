@@ -27,7 +27,14 @@ import { Image } from 'astro:assets'
       </p>
     </div>
     <div class="sidebar flow">
-      <Image class="hero__image" src={drb} alt="D. R. Branch" loading="eager" />
+      <Image
+        class="hero__image"
+        src={drb}
+        alt="D. R. Branch"
+        loading="eager"
+        quality="mid"
+        layout="constrained"
+      />
     </div>
   </section>
   <section class="flow">
