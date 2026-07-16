@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from 'astro/config'
 
-import netlify from '@astrojs/netlify';
+import netlify from '@astrojs/netlify'
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,4 +23,6 @@ export default defineConfig({
   ],
 
   adapter: netlify(),
+
+  trailingSlash: 'always',
 })
