@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy:preview": "netlify deploy",
+    "deploy:prod": "netlify deploy --prod"
   },
   "dependencies": {
     "@astrojs/netlify": "^8.1.2",
