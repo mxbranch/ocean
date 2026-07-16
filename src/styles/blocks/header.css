@@ -28,6 +28,7 @@ a.header__title__link:hover {
 }
 
 .header__nav__link {
+  color: var(--ink);
   text-decoration: none;
   padding-block: var(--space-2xs);
   padding-inline: var(--space-xs);
