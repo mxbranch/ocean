@@ -14,15 +14,29 @@ function wrapTitle(title?: string) {
 }
 
 const seoTitle = wrapTitle(title)
+const description =
+  'The personal website of South Coast UK Web Designer D. R. Branch.'
+
+const pathname = Astro.url.pathname
 ---
 
 <head>
   <meta charset="utf-8" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <link rel="me" href="https://bsky.app/mxbranch.bsky.social" />
+  <link rel="me" href="mailto:dan@mxbranch.com" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="generator" content={Astro.generator} />
+
   <title>{seoTitle}</title>
+  <meta name="description" content={description} />
+
+  <meta property="og:url" content={`https://mxbranch.com${pathname}`} />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content={description} />
 
   <script is:inline>
     function getThemeMode() {
