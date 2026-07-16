@@ -24,6 +24,27 @@ const seoTitle = wrapTitle(title)
   <meta name="generator" content={Astro.generator} />
   <title>{seoTitle}</title>
 
+  <script is:inline>
+    function getThemeMode() {
+      const localStorageTheme = localStorage?.getItem('theme') ?? ''
+      if (['dark', 'light'].includes(localStorageTheme)) {
+        return localStorageTheme
+      }
+      return window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light'
+    }
+
+    const isDark = getThemeMode() === 'dark'
+    if (isDark) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+
+    localStorage?.setItem('theme', localStorageTheme)
+  </script>
+
   {/* Fonts */}
   <Font cssVariable="--font-header" preload />
   <Font cssVariable="--font-sans" preload />
