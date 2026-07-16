@@ -75,6 +75,5 @@
 }
 
 .footer__text {
-  font-size: var(--step--1);
   padding-block-end: var(--space-m);
 }
