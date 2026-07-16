@@ -10,9 +10,8 @@
   content: '';
   position: absolute;
   inset: 0;
-  background-color: oklch(
-    from var(--highlight-background-color, var(--highlight)) l c h / 0.1
-  );
+  background-color: var(--highlight-background-color, var(--highlight));
+  opacity: 0.1;
   margin-inline: -0.1ch;
   margin-block: 1px;
   transform: skewY(2deg);
