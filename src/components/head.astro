@@ -34,7 +34,11 @@ const pathname = Astro.url.pathname
   <title>{seoTitle}</title>
   <meta name="description" content={description} />
 
-  <meta property="og:url" content={`https://mxbranch.com${pathname}`} />
+  <meta property="og:url" content={`https://${Astro.site?.host}${pathname}`} />
+  <meta
+    property="og:image"
+    content={`https://${Astro.site?.host}/opengraph.png`}
+  />
   <meta property="og:type" content="website" />
   <meta property="og:description" content={description} />
 

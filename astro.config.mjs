@@ -21,8 +21,7 @@ export default defineConfig({
       weights: ['300 700'],
     },
   ],
-
+  site: 'https://www.mxbranch.com',
   adapter: netlify(),
-
   trailingSlash: 'always',
 })
