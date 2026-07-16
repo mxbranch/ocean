@@ -72,3 +72,8 @@ ul {
 ul[role='list'] {
   list-style: none;
 }
+
+::selection {
+  background-color: var(--surface);
+  color: var(--lowlight);
+}
