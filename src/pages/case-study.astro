@@ -1,0 +1,31 @@
+---
+import Root from '#/layout/root.astro'
+
+import vibeCheck from '#/assets/vibe-check.png'
+import { Image } from 'astro:assets'
+---
+
+<Root title="Case Studies">
+  <h1>Case Studies</h1>
+  <div class="grid" data-layout="thirds">
+    <article class="projectcard flow">
+      <a href="/case-study/vibe-check/">
+        <Image
+          class="projectcard__image"
+          src={vibeCheck}
+          alt="Vibe Check!"
+          loading="eager"
+          quality="mid"
+          layout="constrained"
+        />
+      </a>
+      <div class="projectcard__link">
+        <a href="/case-study/vibe-check/">Vibe Check!</a>
+      </div>
+      <p class="text-sm">
+        A web-based multiplayer game designed for Twitch streamers to play with
+        their chat.
+      </p>
+    </article>
+  </div>
+</Root>

@@ -29,11 +29,18 @@
 .prose figure img {
   height: unset;
   width: 100%;
-  max-height: var(--figure-img-max-height, 24rem);
+  max-height: var(--figure-img-max-height, 30rem);
   object-fit: cover;
   object-position: var(--figure-img-x, 50%) var(--figure-img-y, 50%);
   border-radius: var(--border-radius);
   user-select: none;
+}
+
+.prose figure iframe {
+  width: 100%;
+  height: unset;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--border-radius);
 }
 
 .prose figure figcaption {

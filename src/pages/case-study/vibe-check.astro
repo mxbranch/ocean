@@ -5,6 +5,7 @@ import vibeCheck from '#/assets/vibe-check.png'
 import vibeCheckModeration from '#/assets/vibe-check-moderation.png'
 import vibeCheckGame from '#/assets/vibe-check-gameview.png'
 import vibeCheckTarget from '#/assets/vibe-check-target.png'
+import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
 ---
 
 <Root title="Vibe Check!">
@@ -13,7 +14,7 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
     <p class="text-lg">
       <a href="https://vibecheck.mxbranch.com" target="_blank">Vibe Check!</a> is
       a web-based multiplayer game designed for Twitch streamers to play with their
-      chat, made in conjunction with streamer <a
+      chat, made in collaboration with streamer Jack at <a
         href="https://jackdaw.tv"
         target="_blank"
       >
@@ -94,9 +95,9 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
     </p>
 
     <p>
-      Other libraries were chosen largely through pragmatism: this was a fairly
-      quick turnaround so I wanted to use tools I was familiar with and knew
-      could get the job done.
+      Other libraries were chosen largely through pragmatism: this project
+      needed a fairly quick turnaround so I wanted to use tools I was familiar
+      with and knew could get the job done.
     </p>
 
     <h2>The User Interface</h2>
@@ -106,22 +107,46 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
       accessibility on a wide variety of devices, and being a fun thing to look
       at for at least an hour of streaming time! Once I had the business logic
       of the game sorted, I spent time making mobile-first user interfaces for
-      each route. I tried to avoid using breakpoints and media queries for this
-      where possible, instead leaning on flexbox and grid to do most of the
-      work. Where media queries were used, they were for adjusting text size,
-      padding, or occasionally flex direction.
+      each route. I tried to <a
+        href="https://buildexcellentwebsit.es/"
+        target="_blank"
+      >
+        avoid using breakpoints and media queries for this where possible
+      </a>, instead leaning on flexbox and grid to do most of the work. Where
+      media queries were used, they were for adjusting text size, padding, or
+      occasionally flex direction.
     </p>
+
+    <figure
+      class="prose__fullwidth flow"
+      style="--figure-img-max-height: 40rem;"
+    >
+      <Image
+        src={vibeCheckSuggestion}
+        alt="Vibe Check! Player Prompt View on Mobile"
+        loading="lazy"
+        layout="constrained"
+      />
+      <figcaption>
+        The player 'prompting' view on a small smartphone viewport. The
+        streamer's avatar is positioned over a target position, and the player
+        has to make a prompt which the streamer can use to guess that position
+        on the scale. The mid/quartile markers were added in after some user
+        feedback rounds before the game was played on stream.
+      </figcaption>
+    </figure>
 
     <p>
       Once I had the overall layout for each route sorted, I then added a number
       of small design features and interactions with the aim of giving the game
-      its own personality. This included design features like adding a crown to
-      users who had permission to run games, adding a radial 'spotlight' effect
-      to the background which slowly rotates, and making the buttons respond
-      with a little motion when hovered over.
+      its own whimsical feel. This included design features like adding a radial
+      'spotlight' effect to the background which slowly rotates, a randomised
+      subtitle on the home page referencing a number of in-jokes from the stream
+      community, and making the buttons respond with a little motion when
+      hovered over.
     </p>
 
-    <figure class="prose__fullwidth flow" style="--figure-img-y: 61%;">
+    <figure class="prose__fullwidth flow" style="--figure-img-y: 68%;">
       <!-- Don't pay attention to the magic number behind the curtain -->
       <Image
         src={vibeCheckGame}
@@ -138,7 +163,7 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
       </figcaption>
     </figure>
 
-    <figure class="prose__fullwidth flow" style="--figure-img-y: 59%;">
+    <figure class="prose__fullwidth flow" style="--figure-img-y: 64%;">
       <!-- Don't pay attention to the magic number behind the curtain -->
       <Image
         src={vibeCheckTarget}
@@ -147,9 +172,10 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
         layout="constrained"
       />
       <figcaption>
-        Once a guess is locked in, the target is shown as a series of concentric
-        circles, giving immediate visual feedback about the accuracy of the
-        streamer's guess. As you can see here, I guessed... poorly. <!-- The vibes were rancid. -->
+        Once a guess is locked in, the target fades into view. It's shown as a
+        series of concentric circles, giving immediate visual feedback about the
+        accuracy of the streamer's guess. As you can see here, I guessed...
+        poorly. <!-- The vibes were rancid. -->
       </figcaption>
     </figure>
 
@@ -163,13 +189,13 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
       this case one of the risks is "anything a malicious individual types in
       might then be displayed to several dozen people and risk the streamer
       punishment from the platform". Tooling to minimize risk and ensure stream
-      safety was paramount for this project. To this end there are multiple
-      systems in place:
+      safety was paramount for this project. There are multiple systems in
+      place:
     </p>
 
     <ul>
       <li>
-        A soft-gate of requiring the user to sign in with an active Twitch
+        A soft gate of requiring the user to sign in with an active Twitch
         account. This doesn't fully reduce the risk of trolling, but it
         introduces friction to participation and reduces the likelihood a bot or
         rogue agent will join a game. This also let me implement a feature to
@@ -180,6 +206,17 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
         This window shows the <em>next prompt</em> that will be shown, along with
         options to skip that prompt or block the user. Using this allows the streamer
         to vet content before it is shown to stream, and enact moderation quickly.
+      </li>
+      <li>
+        Each game instance uses a 'room code' system for access, inspired by the
+        online party games of <a
+          href="https://www.jackboxgames.com/"
+          target="_blank"
+        >
+          Jackbox Games
+        </a>. This means that players need to be watching a given stream in
+        order to participate in the game, and further reduces the likelihood of
+        an automated intruder.
       </li>
     </ul>
 
@@ -197,6 +234,30 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
       </figcaption>
     </figure>
 
-    <p></p>
+    <h2>Response</h2>
+
+    <p>
+      After a few rounds of testing the system with my friends (and fixing the
+      bugs and interface issues said testing surfaced) it was time for Jack to
+      play the game with their stream audience. The stream was a resounding
+      success (largely measured in terms of number of in-jokes created and
+      number of good-natured <s>arguments</s> discussions spawned in the chat!) Jack
+      has brought the game back for multiple streams since its premiere, based on
+      their audience requesting it.
+    </p>
+
+    <figure class="prose__fullwidth">
+      <iframe
+        src="https://clips.twitch.tv/embed?clip=ArtisticMushyWolfDuDudu-58kGGq7W6fBkbgOz&parent=www.mxbranch.com&parent=localhost"
+        allowfullscreen="true"
+        height="378"
+        width="620"
+      >
+      </iframe>
+      <figcaption>
+        The vibes were good! NB: the full stream contains coarse language and
+        topics, view at your discretion.
+      </figcaption>
+    </figure>
   </article>
 </Root>
