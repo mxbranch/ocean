@@ -21,7 +21,12 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
       </a>.
     </p>
     <figure class="prose__fullwidth flow">
-      <Image src={vibeCheck} alt="Vibe Check! Welcome Screen" />
+      <Image
+        src={vibeCheck}
+        alt="Vibe Check! Welcome Screen"
+        loading="eager"
+        layout="constrained"
+      />
       <figcaption>The initial welcome screen of the game.</figcaption>
     </figure>
     <section class="prose__fullwidth with-sidebar">
@@ -60,33 +65,38 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
         </ul>
       </div>
     </section>
-    <h2>Choosing Libraries</h2>
+    <h2>Tech Choices</h2>
     <p>
       This game required UI that responds in real time to the game state, so I
       elected to make a React <abbr title="Single Page Application">SPA</abbr> with
-      an API for server-side data fetching and mutations. I chose Tanstack Start as
-      a framework since it provides everything I needed: routing capabilities, being
-      able to define type-safe <abbr title="Remote Procedure Calls">RPCs</abbr> for
-      data manipulation on the server, and compatibility with the other libraries
-      I'd chosen for the project. It was also an excuse to give it a go, which is
-      something I'd been trying to find for a little while!
+      an API for server-side data fetching and mutations. This does limit people who
+      choose to not load JavaScript, <a
+        href="https://piccalil.li/blog/a-handful-of-reasons-javascript-wont-be-available/"
+        target="_blank"
+      >
+        or for whom JavaScript doesn't load for whatever reason
+      </a>. For this project, visitors to the site will in the plurality of
+      cases be coming from Twitch, a platform which straight up doesn't load
+      anything but a skeleton if JavaScript is disabled. In this scenario, I
+      think it's not unreasonable to assume a visitor will have JavaScript on,
+      and if other issues arise they can be dealt with on a case-by-case basis.
+    </p>
+
+    <p>
+      I chose Tanstack Start as a framework since it provides everything I
+      needed: routing capabilities, being able to define type-safe <abbr
+        title="Remote Procedure Calls"
+      >
+        RPCs
+      </abbr> for data manipulation on the server, and compatibility with the other
+      libraries I'd chosen for the project. It was also an excuse to give it a go,
+      which is something I'd been trying to find for a little while!
     </p>
 
     <p>
       Other libraries were chosen largely through pragmatism: this was a fairly
-      quick turnaround so I wanted to use libraries I was familiar with and knew
-      could get the job done. Tanstack Query would let me control repeating data
-      queries based on game state, meaning I didn't need to write any complex
-      re-fetching timer logic. Drizzle gave me database schema management as
-      well as flexible query design. Valibot let me share validation logic
-      between the client and server, and being <a
-        href="https://standardschema.dev/"
-        target="_blank"
-      >
-        Standard Schema
-      </a> compatible means it integrates with Tanstack Form nicely. Tailwind was
-      a choice made for some initial rapid prototyping which ended up sticking around
-      into the final project due to the aforementioned quick turnaround.
+      quick turnaround so I wanted to use tools I was familiar with and knew
+      could get the job done.
     </p>
 
     <h2>The User Interface</h2>
@@ -113,7 +123,12 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
 
     <figure class="prose__fullwidth flow" style="--figure-img-y: 61%;">
       <!-- Don't pay attention to the magic number behind the curtain -->
-      <Image src={vibeCheckGame} alt="Vibe Check! Game View" />
+      <Image
+        src={vibeCheckGame}
+        alt="Vibe Check! Game View"
+        loading="lazy"
+        layout="constrained"
+      />
       <figcaption>
         The main interface for the streamer to guess based on user prompts. The
         slider interface is prominent on the screen and shows the streamer's
@@ -128,6 +143,8 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
       <Image
         src={vibeCheckTarget}
         alt="Vibe Check! Game View showing the prompt target"
+        loading="lazy"
+        layout="constrained"
       />
       <figcaption>
         Once a guess is locked in, the target is shown as a series of concentric
@@ -168,7 +185,12 @@ import vibeCheckTarget from '#/assets/vibe-check-target.png'
 
     <figure class="prose__fullwidth flow" style="--figure-img-y: 53%;">
       <!-- Don't pay attention to the magic number behind the curtain -->
-      <Image src={vibeCheckModeration} alt="Vibe Check! Moderation View" />
+      <Image
+        src={vibeCheckModeration}
+        alt="Vibe Check! Moderation View"
+        loading="lazy"
+        layout="constrained"
+      />
       <figcaption>
         The moderation view allows the streamer to check the next prompt and
         engage in moderation actions.
