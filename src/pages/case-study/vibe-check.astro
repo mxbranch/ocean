@@ -1,0 +1,180 @@
+---
+import Root from '#/layout/root.astro'
+import { Image } from 'astro:assets'
+import vibeCheck from '#/assets/vibe-check.png'
+import vibeCheckModeration from '#/assets/vibe-check-moderation.png'
+import vibeCheckGame from '#/assets/vibe-check-gameview.png'
+import vibeCheckTarget from '#/assets/vibe-check-target.png'
+---
+
+<Root title="Vibe Check!">
+  <article class="prose flow">
+    <h1>Case Study: Vibe Check!</h1>
+    <p class="text-lg">
+      <a href="https://vibecheck.mxbranch.com" target="_blank">Vibe Check!</a> is
+      a web-based multiplayer game designed for Twitch streamers to play with their
+      chat, made in conjunction with streamer <a
+        href="https://jackdaw.tv"
+        target="_blank"
+      >
+        Jackdaw.tv
+      </a>.
+    </p>
+    <figure class="prose__fullwidth flow">
+      <Image src={vibeCheck} alt="Vibe Check! Welcome Screen" />
+      <figcaption>The initial welcome screen of the game.</figcaption>
+    </figure>
+    <section class="prose__fullwidth with-sidebar">
+      <div class="sidebar">
+        <h2>Requirements</h2>
+      </div>
+      <div class="flow">
+        <p>
+          Jack was interested in creating a version of the game <a
+            href="https://www.cmyk.games/collections/games/products/wavelength"
+            target="_blank"
+          >
+            Wavelength
+          </a> by CMYK Games which they could play with their Twitch stream audience.
+          It needed:
+        </p>
+        <ul>
+          <li>Stream safety features such as moderation</li>
+          <li>To be accessible from mobile devices</li>
+          <li>To have a polished user interface</li>
+        </ul>
+      </div>
+    </section>
+    <section class="with-sidebar prose__fullwidth">
+      <div class="sidebar">
+        <h2>Tools and Libraries</h2>
+      </div>
+      <div>
+        <ul role="list">
+          <li>React</li>
+          <li>Tanstack Start / Query / Form</li>
+          <li>Drizzle + Postgres</li>
+          <li>Better-Auth</li>
+          <li>Tailwind</li>
+          <li>Valibot</li>
+        </ul>
+      </div>
+    </section>
+    <h2>Choosing Libraries</h2>
+    <p>
+      This game required UI that responds in real time to the game state, so I
+      elected to make a React <abbr title="Single Page Application">SPA</abbr> with
+      an API for server-side data fetching and mutations. I chose Tanstack Start as
+      a framework since it provides everything I needed: routing capabilities, being
+      able to define type-safe <abbr title="Remote Procedure Calls">RPCs</abbr> for
+      data manipulation on the server, and compatibility with the other libraries
+      I'd chosen for the project. It was also an excuse to give it a go, which is
+      something I'd been trying to find for a little while!
+    </p>
+
+    <p>
+      Other libraries were chosen largely through pragmatism: this was a fairly
+      quick turnaround so I wanted to use libraries I was familiar with and knew
+      could get the job done. Tanstack Query would let me control repeating data
+      queries based on game state, meaning I didn't need to write any complex
+      re-fetching timer logic. Drizzle gave me database schema management as
+      well as flexible query design. Valibot let me share validation logic
+      between the client and server, and being <a
+        href="https://standardschema.dev/"
+        target="_blank"
+      >
+        Standard Schema
+      </a> compatible means it integrates with Tanstack Form nicely. Tailwind was
+      a choice made for some initial rapid prototyping which ended up sticking around
+      into the final project due to the aforementioned quick turnaround.
+    </p>
+
+    <h2>The User Interface</h2>
+
+    <p>
+      This project needed a design meeting two distinct requirements:
+      accessibility on a wide variety of devices, and being a fun thing to look
+      at for at least an hour of streaming time! Once I had the business logic
+      of the game sorted, I spent time making mobile-first user interfaces for
+      each route. I tried to avoid using breakpoints and media queries for this
+      where possible, instead leaning on flexbox and grid to do most of the
+      work. Where media queries were used, they were for adjusting text size,
+      padding, or occasionally flex direction.
+    </p>
+
+    <p>
+      Once I had the overall layout for each route sorted, I then added a number
+      of small design features and interactions with the aim of giving the game
+      its own personality. This included design features like adding a crown to
+      users who had permission to run games, adding a radial 'spotlight' effect
+      to the background which slowly rotates, and making the buttons respond
+      with a little motion when hovered over.
+    </p>
+
+    <figure class="prose__fullwidth flow" style="--figure-img-y: 61%;">
+      <!-- Don't pay attention to the magic number behind the curtain -->
+      <Image src={vibeCheckGame} alt="Vibe Check! Game View" />
+      <figcaption>
+        The main interface for the streamer to guess based on user prompts. The
+        slider interface is prominent on the screen and shows the streamer's
+        avatar as the handle. The chat player's prompt is shown as a speech
+        bubble coming from their avatar, giving players a little moment in the
+        spotlight.
+      </figcaption>
+    </figure>
+
+    <figure class="prose__fullwidth flow" style="--figure-img-y: 59%;">
+      <!-- Don't pay attention to the magic number behind the curtain -->
+      <Image
+        src={vibeCheckTarget}
+        alt="Vibe Check! Game View showing the prompt target"
+      />
+      <figcaption>
+        Once a guess is locked in, the target is shown as a series of concentric
+        circles, giving immediate visual feedback about the accuracy of the
+        streamer's guess. As you can see here, I guessed... poorly. <!-- The vibes were rancid. -->
+      </figcaption>
+    </figure>
+
+    <h2>Stream Safety</h2>
+
+    <p>
+      Twitch is a platform with fairly rigid <abbr title="Terms of Service">
+        ToS
+      </abbr>, and any public stream is a potential target for trolls. Any time
+      you're getting user input there's risks you need to account for, and in
+      this case one of the risks is "anything a malicious individual types in
+      might then be displayed to several dozen people and risk the streamer
+      punishment from the platform". Tooling to minimize risk and ensure stream
+      safety was paramount for this project. To this end there are multiple
+      systems in place:
+    </p>
+
+    <ul>
+      <li>
+        A soft-gate of requiring the user to sign in with an active Twitch
+        account. This doesn't fully reduce the risk of trolling, but it
+        introduces friction to participation and reduces the likelihood a bot or
+        rogue agent will join a game. This also let me implement a feature to
+        let the streamer block accounts making unsavoury prompts.
+      </li>
+      <li>
+        A 'moderation preview window' which could be kept on a second monitor.
+        This window shows the <em>next prompt</em> that will be shown, along with
+        options to skip that prompt or block the user. Using this allows the streamer
+        to vet content before it is shown to stream, and enact moderation quickly.
+      </li>
+    </ul>
+
+    <figure class="prose__fullwidth flow" style="--figure-img-y: 53%;">
+      <!-- Don't pay attention to the magic number behind the curtain -->
+      <Image src={vibeCheckModeration} alt="Vibe Check! Moderation View" />
+      <figcaption>
+        The moderation view allows the streamer to check the next prompt and
+        engage in moderation actions.
+      </figcaption>
+    </figure>
+
+    <p></p>
+  </article>
+</Root>

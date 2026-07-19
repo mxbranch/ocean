@@ -68,6 +68,11 @@ blockquote {
   font-style: italic;
 }
 
+blockquote ::selection {
+  background-color: var(--lowlight);
+  color: var(--paper);
+}
+
 blockquote > .blockquote__credit {
   color: var(--highlight);
   font-size: var(--step--1);
@@ -76,11 +81,16 @@ blockquote > .blockquote__credit {
 }
 
 ul {
-  padding: 0;
+  margin: 0;
+}
+
+ul:not([role='list']) > li + li {
+  margin-block-start: 1.2rem;
 }
 
 ul[role='list'] {
   list-style: none;
+  padding: 0;
 }
 
 ::selection {

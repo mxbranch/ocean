@@ -1,7 +1,7 @@
 ---
 import Root from '#/layout/root.astro'
 import drb from '#/assets/drb.jpg'
-import construction from '#/assets/underconstruction.gif'
+import vibeCheck from '#/assets/vibe-check.png'
 import { Image } from 'astro:assets'
 ---
 
@@ -38,12 +38,27 @@ import { Image } from 'astro:assets'
     </div>
   </section>
   <section class="flow">
-    <h2>Project Overviews</h2>
-    <Image
-      src={construction}
-      alt="Under Construction"
-      class="center construction"
-      loading="eager"
-    />
-  </section></Root
->
+    <h2>Case Studies</h2>
+    <div class="grid" data-layout="thirds">
+      <article class="projectcard flow">
+        <a href="/case-study/vibe-check/">
+          <Image
+            class="projectcard__image"
+            src={vibeCheck}
+            alt="Vibe Check!"
+            loading="eager"
+            quality="mid"
+            layout="constrained"
+          />
+        </a>
+        <div class="projectcard__link">
+          <a href="/case-study/vibe-check/">Vibe Check!</a>
+        </div>
+        <p class="text-sm">
+          A web-based multiplayer game designed for Twitch streamers to play
+          with their chat.
+        </p>
+      </article>
+    </div>
+  </section>
+</Root>

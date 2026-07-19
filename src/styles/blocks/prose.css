@@ -11,3 +11,44 @@
   inline-size: calc(100cqi);
   margin-inline-start: calc(50% - 50cqi);
 }
+
+.prose figure {
+  display: block;
+  margin-inline: unset;
+  margin-block: var(--space-xl);
+  padding: var(--space-xs);
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+}
+
+.prose figure ::selection {
+  background-color: var(--lowlight);
+  color: var(--paper);
+}
+
+.prose figure img {
+  height: unset;
+  width: 100%;
+  max-height: var(--figure-img-max-height, 24rem);
+  object-fit: cover;
+  object-position: var(--figure-img-x, 50%) var(--figure-img-y, 50%);
+  border-radius: var(--border-radius);
+  user-select: none;
+}
+
+.prose figure figcaption {
+  font-size: var(--step--1);
+}
+
+.prose .prose__bordersection {
+  border-inline-start: var(--space-3xs) solid var(--highlight);
+  padding-inline-start: var(--space-xs);
+}
+
+.prose hr {
+  width: var(--space-3xl);
+  height: var(--space-3xs);
+  color: var(--highlight);
+  background-color: var(--highlight);
+  margin-block: var(--space-l);
+}
