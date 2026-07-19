@@ -40,14 +40,13 @@ import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
             href="https://www.cmyk.games/collections/games/products/wavelength"
             target="_blank"
           >
-            Wavelength
-          </a> by CMYK Games which they could play with their Twitch stream audience.
-          It needed:
+            Wavelength by CMYK Games
+          </a> which they could play with their Twitch stream audience. It needed:
         </p>
         <ul>
           <li>Stream safety features such as moderation</li>
-          <li>To be accessible from mobile devices</li>
-          <li>To have a polished user interface</li>
+          <li>Mobile device accessibility</li>
+          <li>A polished user interface</li>
         </ul>
       </div>
     </section>
@@ -66,21 +65,51 @@ import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
         </ul>
       </div>
     </section>
+    <h2>Ideation</h2>
+    <p>
+      Wavelength is a game where teams compete to see who can most accurately
+      guess a target on a scale based on their team member's prompt. (For an
+      example of play, I recommend <a
+        href="https://www.youtube.com/watch?v=pS-XT-5R26Q"
+        target="_blank"
+      >
+        Polygon's gameplay video
+      </a>. NB: this video contains coarse language.) In adapting the idea for
+      this project, I wanted to encourage a more collaborative approach to the
+      game. It's not streamer vs chat, it's streamer <em>with</em> chat. To encourage
+      this collaborative atmosphere:
+    </p>
+    <ul>
+      <li>
+        I decided not to include scoring in the game. If the aim of the game
+        were "the streamer wants to get a good score", this could encourage
+        unsportsmanlike behaviour from chat players trying to sabotage that
+        score. Instead, the challenge of the game becomes, "Can I get the
+        streamer to guess correctly?"
+      </li>
+      <li>
+        Since this game is intended for live chat audiences, I wanted the scales
+        to encourage discussion and engagement. My friends and I generated a
+        number of scales ranging from more straightforward ("hot to cold", "tall
+        to short") to more subjective ("mountain to molehill", "gigantic anime
+        sword to butter knife").
+      </li>
+    </ul>
     <h2>Tech Choices</h2>
     <p>
       This game required UI that responds in real time to the game state, so I
       elected to make a React <abbr title="Single Page Application">SPA</abbr> with
       an API for server-side data fetching and mutations. This does limit people who
-      choose to not load JavaScript, <a
+      choose not to load JavaScript, <a
         href="https://piccalil.li/blog/a-handful-of-reasons-javascript-wont-be-available/"
         target="_blank"
       >
         or for whom JavaScript doesn't load for whatever reason
-      </a>. For this project, visitors to the site will in the plurality of
-      cases be coming from Twitch, a platform which straight up doesn't load
-      anything but a skeleton if JavaScript is disabled. In this scenario, I
-      think it's not unreasonable to assume a visitor will have JavaScript on,
-      and if other issues arise they can be dealt with on a case-by-case basis.
+      </a>. For this project, a plurality of visitors to the site will be coming
+      from Twitch, a platform which straight up doesn't load anything but a
+      skeleton if JavaScript is disabled. In this scenario, I think it's
+      reasonable to assume a visitor will have JavaScript on, and if other
+      issues arise they can be dealt with on a case-by-case basis.
     </p>
 
     <p>
@@ -96,21 +125,18 @@ import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
 
     <p>
       Other libraries were chosen largely through pragmatism: this project
-      needed a fairly quick turnaround so I wanted to use tools I was familiar
+      needed a fairly quick turnaround, so I wanted to use tools I was familiar
       with and knew could get the job done.
     </p>
 
     <h2>The User Interface</h2>
 
     <p>
-      This project needed a design meeting two distinct requirements:
-      accessibility on a wide variety of devices, and being a fun thing to look
-      at for at least an hour of streaming time! Once I had the business logic
-      of the game sorted, I spent time making mobile-first user interfaces for
-      each route. I tried to <a
-        href="https://buildexcellentwebsit.es/"
-        target="_blank"
-      >
+      The UI needed to meet two distinct requirements: being accessible on a
+      wide variety of devices, and being a fun thing to look at for at least an
+      hour of streaming time! Once I had the business logic of the game sorted,
+      I spent time making mobile-first user interfaces for each route. I tried
+      to <a href="https://buildexcellentwebsit.es/" target="_blank">
         avoid using breakpoints and media queries for this where possible
       </a>, instead leaning on flexbox and grid to do most of the work. Where
       media queries were used, they were for adjusting text size, padding, or
@@ -139,11 +165,10 @@ import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
     <p>
       Once I had the overall layout for each route sorted, I then added a number
       of small design features and interactions with the aim of giving the game
-      its own whimsical feel. This included design features like adding a radial
-      'spotlight' effect to the background which slowly rotates, a randomised
-      subtitle on the home page referencing a number of in-jokes from the stream
-      community, and making the buttons respond with a little motion when
-      hovered over.
+      a whimsical feel. This included a slowly rotating radial 'spotlight'
+      effect on the background, and a Minecraft-esque randomised subtitle on the
+      home page referencing a number of in-jokes from the stream community. I
+      also made the buttons respond with a little motion when hovered over.
     </p>
 
     <figure class="prose__fullwidth flow" style="--figure-img-y: 68%;">
@@ -195,17 +220,18 @@ import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
 
     <ul>
       <li>
-        A soft gate of requiring the user to sign in with an active Twitch
-        account. This doesn't fully reduce the risk of trolling, but it
-        introduces friction to participation and reduces the likelihood a bot or
-        rogue agent will join a game. This also let me implement a feature to
-        let the streamer block accounts making unsavoury prompts.
+        A player is required to sign in with an active Twitch account via OAuth.
+        This doesn't fully reduce the risk of trolling, but it introduces
+        friction to participation and reduces the likelihood a bot or rogue
+        agent will join a game. This also let me implement a feature to let the
+        streamer block accounts making unsavoury prompts.
       </li>
       <li>
         A 'moderation preview window' which could be kept on a second monitor.
         This window shows the <em>next prompt</em> that will be shown, along with
-        options to skip that prompt or block the user. Using this allows the streamer
-        to vet content before it is shown to stream, and enact moderation quickly.
+        options to skip that prompt or block the user. This allows the streamer to
+        vet content before it is shown to stream, and enact moderation quickly without
+        need for a separate moderator.
       </li>
       <li>
         Each game instance uses a 'room code' system for access, inspired by the
@@ -238,12 +264,15 @@ import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
 
     <p>
       After a few rounds of testing the system with my friends (and fixing the
-      bugs and interface issues said testing surfaced) it was time for Jack to
+      bugs and interface issues said testing surfaced), it was time for Jack to
       play the game with their stream audience. The stream was a resounding
       success (largely measured in terms of number of in-jokes created and
-      number of good-natured <s>arguments</s> discussions spawned in the chat!) Jack
-      has brought the game back for multiple streams since its premiere, based on
-      their audience requesting it.
+      number of good-natured <s>arguments</s> discussions spawned in the chat!).
+    </p>
+
+    <p>
+      Jack has brought the game back for multiple streams since its premiere,
+      based on audience request.
     </p>
 
     <figure class="prose__fullwidth">
@@ -256,7 +285,7 @@ import vibeCheckSuggestion from '#/assets/vibe-check-suggestion.png'
       </iframe>
       <figcaption>
         The vibes were good! NB: the full stream contains coarse language and
-        topics, view at your discretion.
+        adult topics, view at your discretion.
       </figcaption>
     </figure>
   </article>
