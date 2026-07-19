@@ -9,6 +9,20 @@ body {
   gap: var(--space-xl);
 }
 
+.skip-to-content-link {
+  left: var(--space-m);
+  top: var(--space-m);
+  padding: var(--space-xs);
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+  position: absolute;
+  transform: translateY(calc(-200%));
+}
+
+.skip-to-content-link:focus {
+  transform: translateY(0%);
+}
+
 .main {
   display: flex;
   flex-direction: column;
