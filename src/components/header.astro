@@ -17,6 +17,10 @@ const navigationLinks: NavLink[] = [
     href: '/about/',
     label: 'About',
   },
+  {
+    href: '/case-study/',
+    label: 'Case Studies',
+  },
 ]
 ---
 
@@ -25,15 +29,21 @@ const navigationLinks: NavLink[] = [
     <a href="/" class="header__title__link">D. R. Branch</a>
     <nav class="cluster | header__nav">
       {
-        navigationLinks.map((link) => (
-          <a
-            href={link.href}
-            class="header__nav__link"
-            data-current={pathname === link.href || undefined}
-          >
-            {link.label}
-          </a>
-        ))
+        navigationLinks.map((link) => {
+          const linkIsHomepage = link.href === '/' && link.href === pathname
+          const linkMatchesCurrentPath =
+            link.href !== '/' && pathname.startsWith(link.href)
+          const current = linkIsHomepage || linkMatchesCurrentPath || undefined
+          return (
+            <a
+              href={link.href}
+              class="header__nav__link"
+              data-current={current}
+            >
+              {link.label}
+            </a>
+          )
+        })
       }
     </nav>
   </div>
