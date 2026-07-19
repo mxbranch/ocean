@@ -1,6 +1,7 @@
 ---
 import Root from '#/layout/root.astro'
 
+import construction from '#/assets/underconstruction.gif'
 import vibeCheck from '#/assets/vibe-check.png'
 import { Image } from 'astro:assets'
 ---
@@ -29,4 +30,10 @@ import { Image } from 'astro:assets'
       </p>
     </article>
   </div>
+  <Image
+    src={construction}
+    alt="Under Construction"
+    class="center construction"
+    loading="eager"
+  />
 </Root>
