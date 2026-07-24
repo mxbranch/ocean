@@ -5,14 +5,15 @@ import Footer from '#/components/footer.astro'
 import '#/styles/index.css'
 
 import type { Props as HeadProps } from '#/components/head.astro'
+import { describe } from 'astro:schema'
 
 interface Props extends HeadProps {}
 
-const { title } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <html lang="en">
-  <Head title={title} />
+  <Head title={title} description={description} />
   <body>
     <a href="#content" class="skip-to-content-link">Skip to main content</a>
     <Header />
