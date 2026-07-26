@@ -1,0 +1,164 @@
+---
+import Root from '#/layout/root.astro'
+
+import { Image } from 'astro:assets'
+import lms from '#/assets/lms.jpg'
+---
+
+<Root
+  title="Case Study: Learning Management System"
+  description="Case study of the re-engineering of a Learning Management System."
+>
+  <article class="prose flow">
+    <h1>Case Study: Learning Management System</h1>
+    <p class="text-lg">
+      This case study details the re-engineering of a legacy Learning Management
+      System, which I was lead developer and project manager for while working
+      at <a href="https://www.underonecloud.com" target="_blank">
+        Under One Cloud
+      </a>.
+    </p>
+
+    <figure class="prose__fullwidth flow">
+      <Image
+        src={lms}
+        alt="A blank notepad on a desk with some coffee."
+        loading="eager"
+        width={800}
+        quality="high"
+        layout="constrained"
+      />
+      <figcaption>
+        This write-up currently does not have any screenshots of <a
+          href="https://my.maguiretraining.co.uk"
+          target="_blank"
+        >
+          the re-engineered LMS
+        </a> for licensing reasons. I'm working on it!
+      </figcaption>
+    </figure>
+
+    <section class="prose__fullwidth with-sidebar">
+      <div class="sidebar"><h2>Requirements</h2></div>
+      <div class="flow">
+        <p>
+          Maguire Training were looking for a renewal of their legacy <abbr
+            title="Learning Management System"
+          >
+            LMS
+          </abbr>. It needed:
+        </p>
+        <ul>
+          <li>
+            A refreshed design with configurable theming for branded dashboards.
+          </li>
+          <li>Increased feedback from the interface.</li>
+          <li>Improved speed and stability.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="prose__fullwidth with-sidebar">
+      <div class="sidebar"><h2>Tools and Libraries</h2></div>
+      <div>
+        <ul role="list">
+          <li>React</li>
+          <li>Next.js (App Router)</li>
+          <li>Prisma + MariaDB</li>
+          <li>CSS Modules</li>
+          <li>TypeScript</li>
+        </ul>
+      </div>
+    </section>
+    <h2>Project Brief</h2>
+    <p>
+      When UOC took over maintenance of Maguire Training's LMS, it was an{' '}
+      <a href="https://en.wikipedia.org/wiki/ASP.NET_Web_Forms" target="_blank">
+        ASP.NET WebForms
+      </a> application running on a proprietary framework. The application was functional,
+      but the design and performance were lacking compared to other competitor products
+      in the LMS ecosystem, and from a maintenance and feature development perspective
+      the custom framework was largely undocumented.
+    </p>
+    <p>
+      Together, Maguire Training and UOC planned to renew the LMS using a full
+      stack approach, improving the back-end performance and the front-end user
+      interface for both administration and customer accounts. I was the lead on
+      the project working alongside another colleague, and served as primary
+      point of contact with the client.
+    </p>
+    <h2>Tech Choices</h2>
+    <p>
+      We elected to base the new LMS platform around Next.js. As a two person
+      team, keeping the codebase lean was key, and being able to write front-
+      and back-end code in a single language (TypeScript) without needing to
+      context switch improved our developer velocity.
+    </p>
+    <p>
+      The legacy LMS relied on MySQL 5.7 for its database needs. We elected to
+      move the new application to MariaDB. This would give us the benefit of
+      improved performance and more modern database features, and also allow us
+      to migrate existing data structures over if needed.
+    </p>
+    <p>
+      The final major library leveraged in the project was Prisma, selected for
+      both its <abbr title="Object-Relational Mapping">ORM</abbr> library and its
+      mature database migration toolset.
+    </p>
+    <h2>User Interface</h2>
+    <p>
+      We built a component library using <a
+        href="https://github.com/css-modules/css-modules"
+        target="_blank"
+      >
+        CSS Modules
+      </a>. These let us write CSS for different components and pages within the
+      system with the added benefit of automatic locally scoped class names.
+      Again, a choice driven by pragmatism given our small development team:
+      this allowed us to avoid accidentally stepping on each other's namespaces.
+    </p>
+    <p>
+      A key element of the new interface was that it could be customised from
+      the admin side to provide different branded themes for different
+      customers. We achieved this through designing multiple palettes using <a
+        href="https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Cascading_variables/Using_custom_properties"
+        target="_blank"
+      >
+        CSS Custom Properties
+      </a> which were applied to elements using <a
+        href="https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes"
+        target="_blank"
+      >
+        data attributes
+      </a>. These could be controlled from the server when the pages were
+      rendered.
+    </p>
+    <h2>Performance</h2>
+    <p>
+      The new tech stack enabled us to use development patterns which improved
+      performance across the board. An example of this is in the report
+      generation section of the administration dashboard. The legacy report
+      system gave no feedback to the user as to report generation progress, and
+      caused performance issues for other users of the site due to excessive
+      server resource utilisation. Generation of some reports took upwards of 30
+      minutes.
+    </p>
+    <p>
+      In contrast, the reengineered LMS is performant enough to run each report
+      within a minute at most, and the results can be requested in either CSV or
+      PDF format. For larger, more computationally complex reports, using a
+      React-based framework let us provide more informative user interfaces with
+      real-time progress bars. We were also able to move tasks like PDF
+      generation to the client side, reducing computational load on the server
+      and therefore impact on overall site performance.
+    </p>
+    <h2>Outcomes</h2>
+    <p>
+      <a href="https://my.maguiretraining.co.uk" target="_blank">The LMS</a> has now
+      been active for over a year. User count has increased, with multiple branded
+      sites being created for Maguire's customers during that timeframe. Maguire contracted
+      UOC for continued development of new features on the system after launch, and
+      together we have improved the experience for both Maguire's employees and their
+      customers.
+    </p>
+  </article>
+</Root>
