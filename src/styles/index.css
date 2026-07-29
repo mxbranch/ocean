@@ -21,6 +21,7 @@
 @import './utilities/highlight.css' layer(utility);
 @import './utilities/visually-hidden.css' layer(utility);
 
+@import './blocks/callout.css' layer(block);
 @import './blocks/footer.css' layer(block);
 @import './blocks/header.css' layer(block);
 @import './blocks/hero.css' layer(block);

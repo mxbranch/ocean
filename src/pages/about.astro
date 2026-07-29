@@ -1,5 +1,6 @@
 ---
 import Root from '#/layout/root.astro'
+import Callout from '#/components/callout.astro'
 ---
 
 <Root title="About Me">
@@ -18,7 +19,14 @@ import Root from '#/layout/root.astro'
       stakeholders.
     </p>
     <p class="text-sm">* Nintendo fanfiction</p>
-    <!-- <p><a href="/">Download my CV as a PDF here.</a></p> -->
+    <Callout>
+      Looking for something more formal and/or detailed? <a
+        href="/DRB_CV.pdf"
+        target="_blank"
+      >
+        Download my CV.
+      </a>
+    </Callout>
   </div>
   <section class="with-sidebar">
     <div class="sidebar flow">
@@ -27,7 +35,7 @@ import Root from '#/layout/root.astro'
     <div class="flow">
       <h3>???</h3>
       <span class="text-sm text-lowlight">
-        I'm looking for work in Q4 2026 - <a
+        Due to redundancy I'm looking for new opportunities in Q4 2026 - <a
           href="mailto:dan@mxbranch.com?subject=I'm Looking For A Web Developer"
         >
           Get in touch with me via email!

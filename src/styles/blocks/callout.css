@@ -1,0 +1,6 @@
+.callout {
+  background-color: var(--surface);
+  border-radius: var(--border-radius);
+  padding: var(--space-s);
+  font-size: var(--step--1);
+}
