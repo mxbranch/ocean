@@ -1,0 +1,23 @@
+---
+import Head from '#/components/head.astro'
+import Header from '#/components/header.astro'
+import Footer from '#/components/footer.astro'
+import '#/styles/index.css'
+
+import type { Props as HeadProps } from '#/components/head.astro'
+import { describe } from 'astro:schema'
+
+interface Props extends HeadProps {}
+
+const { title, description } = Astro.props
+---
+
+<html lang="en">
+  <Head title={title} description={description} />
+  <body data-style="minimal">
+    <a href="#content" class="skip-to-content-link">Skip to main content</a>
+    <main class="container main" id="content">
+      <slot />
+    </main>
+  </body>
+</html>

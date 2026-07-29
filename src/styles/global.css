@@ -9,6 +9,11 @@ body {
   gap: var(--space-xl);
 }
 
+body[data-style='minimal'] {
+  align-items: center;
+  justify-content: center;
+}
+
 .skip-to-content-link {
   left: var(--space-m);
   top: var(--space-m);

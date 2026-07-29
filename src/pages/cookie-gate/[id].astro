@@ -1,0 +1,34 @@
+---
+import type { GetStaticPaths } from 'astro'
+import Minimal from '#/layout/minimal.astro'
+
+export const getStaticPaths = (() => {
+  return [
+    {
+      params: {
+        id: 'vibe-check-twitch',
+      },
+      props: {
+        target: 'Twitch.tv',
+        url: 'https://clips.twitch.tv/embed?clip=ArtisticMushyWolfDuDudu-58kGGq7W6fBkbgOz&parent=www.mxbranch.com&parent=localhost',
+      },
+    },
+  ]
+}) satisfies GetStaticPaths
+
+const { id } = Astro.params
+const { target, url } = Astro.props
+---
+
+<Minimal
+  title="Cookie Gate"
+  description="Some websites out there set cookies that I want to let people opt out of."
+>
+  <section class="flow prose">
+    <h1>Heads up!</h1>
+    <p>
+      This iframe embeds content from {target}, who may set their own cookies.
+    </p>
+    <a href={url}>I understand. Load the embedded content.</a>
+  </section>
+</Minimal>
