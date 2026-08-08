@@ -1,54 +1,13 @@
 ---
 import Root from '#/layout/root.astro'
-
+import CaseStudyGrid from '#/components/case-study-grid.astro'
 import construction from '#/assets/underconstruction.gif'
-import vibeCheck from '#/assets/vibe-check.png'
-import lms from '#/assets/lms.jpg'
 import { Image } from 'astro:assets'
 ---
 
 <Root title="Case Studies">
   <h1>Case Studies</h1>
-  <div class="grid" data-layout="thirds">
-    <article class="projectcard flow">
-      <Image
-        class="projectcard__image"
-        src={vibeCheck}
-        alt=""
-        loading="eager"
-        width={300}
-        quality="mid"
-        layout="constrained"
-      />
-      <div class="projectcard__link">
-        <a href="/case-study/vibe-check/">Vibe Check!</a>
-      </div>
-      <p class="text-sm">
-        A web-based multiplayer game designed for Twitch streamers to play with
-        their chat.
-      </p>
-    </article>
-    <article class="projectcard flow">
-      <Image
-        class="projectcard__image"
-        src={lms}
-        alt=""
-        loading="eager"
-        width={300}
-        quality="mid"
-        layout="constrained"
-      />
-      <div class="projectcard__link">
-        <a href="/case-study/learning-management-system/">
-          Learning Management System
-        </a>
-      </div>
-      <p class="text-sm">
-        A re-engineered legacy application for a professional development
-        provider.
-      </p>
-    </article>
-  </div>
+  <CaseStudyGrid />
   <Image
     src={construction}
     alt="Under Construction"
