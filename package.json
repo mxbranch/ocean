@@ -14,8 +14,8 @@
     "deploy:prod": "netlify deploy --prod"
   },
   "dependencies": {
-    "@astrojs/netlify": "^8.1.2",
-    "astro": "^7.1.4"
+    "@astrojs/netlify": "^8.2.0",
+    "astro": "^7.2.0"
   },
   "devDependencies": {
     "netlify-cli": "^26.2.0",
