@@ -22,6 +22,12 @@ export default defineConfig({
     },
   ],
   site: 'https://www.mxbranch.com',
-  adapter: netlify(),
+  adapter: netlify({
+    devFeatures: {
+      environmentVariables: true,
+      images: true,
+      edgeFunctions: false,
+    },
+  }),
   trailingSlash: 'always',
 })
