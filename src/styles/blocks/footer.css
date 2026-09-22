@@ -34,12 +34,17 @@
   bottom: -6rem;
   rotate: 0deg;
   z-index: -5;
+  user-select: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .footer__watermark {
     animation: footer-watermark-rotate 90s linear infinite;
   }
+}
+
+:root.dark .footer__watermark {
+  filter: invert() brightness(1.5);
 }
 
 .footer__illustration {
