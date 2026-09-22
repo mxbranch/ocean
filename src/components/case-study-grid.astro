@@ -6,15 +6,16 @@ import { Image } from 'astro:assets'
 
 <div class="grid" data-layout="thirds">
   <article class="projectcard flow">
-    <Image
-      class="projectcard__image"
-      src={vibeCheck}
-      alt=""
-      loading="eager"
-      width={300}
-      quality="mid"
-      layout="constrained"
-    />
+    <div class="projectcard__image">
+      <Image
+        src={vibeCheck}
+        alt=""
+        loading="eager"
+        width={300}
+        quality="mid"
+        layout="constrained"
+      />
+    </div>
     <div class="projectcard__link">
       <a href="/case-study/vibe-check/">Vibe Check!</a>
     </div>
@@ -24,15 +25,16 @@ import { Image } from 'astro:assets'
     </p>
   </article>
   <article class="projectcard flow">
-    <Image
-      class="projectcard__image"
-      src={lms}
-      alt=""
-      loading="eager"
-      width={300}
-      quality="mid"
-      layout="constrained"
-    />
+    <div class="projectcard__image">
+      <Image
+        src={lms}
+        alt=""
+        loading="eager"
+        width={300}
+        quality="mid"
+        layout="constrained"
+      />
+    </div>
     <div class="projectcard__link">
       <a href="/case-study/learning-management-system/">
         Learning Management System

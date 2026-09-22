@@ -9,19 +9,25 @@
   width: 100%;
   height: auto;
   aspect-ratio: 1 / 1;
-  object-fit: cover;
   border-radius: var(--border-radius);
-  user-select: none;
+  overflow: clip;
+  & > img {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+    user-select: none;
+    transition-property: scale;
+    transition-duration: var(--transition-l);
+  }
 }
 
-.projectcard__link {
-  display: flex;
-  align-items: center;
-}
-
-.projectcard__link:has(+ *:hover) {
-  text-underline-offset: 0.2lh;
-  color: var(--highlight);
+@media (prefers-reduced-motion: no-preference) {
+  .projectcard__image:has(+ *:hover) {
+    & > img {
+      scale: 1.05;
+    }
+  }
 }
 
 .projectcard ::selection {
@@ -32,11 +38,11 @@
 /*
 <div class="grid" data-layout="thirds">
   <article class="projectcard flow">
-    <a href="projectcard__link" href="/projects/blah">
-      <Image class="projectcard__image" src={drb} alt="D. R. Branch" />
-    </a>
+    <div class="projectcard__image">
+      <Image src={drb} alt="" />
+    </div>
     <div class="projectcard__link">
-      <a href="projectcard__link" href="/projects/blah">
+      <a href="/projects/blah">
         Working On Myself
       </a>
     </div>

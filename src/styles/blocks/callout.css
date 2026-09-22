@@ -4,3 +4,8 @@
   padding: var(--callout-padding, var(--space-s));
   font-size: var(--step--1);
 }
+
+.callout ::selection {
+  background-color: var(--lowlight);
+  color: var(--paper);
+}
