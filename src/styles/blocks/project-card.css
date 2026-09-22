@@ -34,20 +34,3 @@
   background-color: var(--lowlight);
   color: var(--paper);
 }
-
-/*
-<div class="grid" data-layout="thirds">
-  <article class="projectcard flow">
-    <div class="projectcard__image">
-      <Image src={drb} alt="" />
-    </div>
-    <div class="projectcard__link">
-      <a href="/projects/blah">
-        Working On Myself
-      </a>
-    </div>
-  </article>
-  <article class="projectcard flow">Card</article>
-  <article class="projectcard flow">Card</article>
-</div>
-*/
