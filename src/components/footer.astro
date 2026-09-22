@@ -14,14 +14,21 @@ import ModeToggle from '#/components/mode-toggle.astro'
 <footer class="footer float-bottom">
   <div class="footer__waves"></div>
   <div class="container footer__content">
-    <Image
-      class="footer__watermark"
-      src={watermark}
-      alt=""
-      quality="high"
-      loading="lazy"
-      width={256}
-    />
+    <div class="flow">
+      <h2>Let's talk!</h2>
+      <p>
+        If you're interested in reaching out, send me an email at <a
+          href="mailto:dan@mxbranch.com"
+        >
+          dan@mxbranch.com
+        </a>, or say hi on <a
+          href="https://bsky.app/profile/mxbranch.com"
+          target="_blank"
+        >
+          Bluesky
+        </a>. I'd love to hear from you!
+      </p>
+    </div>
     <Image
       class="footer__illustration"
       src={bocean}
@@ -32,42 +39,49 @@ import ModeToggle from '#/components/mode-toggle.astro'
       layout="constrained"
       style="--footer-illustration-y: 60%;"
     />
-    <div class="footer__rows">
-      <div class="repel">
-        <div class="footer__icons text-sm cluster">
-          <span>Elsewhere:</span>
-          <a
-            href="https://bsky.app/profile/mxbranch.com"
-            class="footer__icons__link"
-            target="_blank"
-          >
-            <Bsky />
-          </a>
-          <a
-            href="https://codeberg.org/mxbranch"
-            class="footer__icons__link"
-            target="_blank"
-          >
-            <Codeberg />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/d-r-branch/"
-            class="footer__icons__link"
-            target="_blank"
-          >
-            <Linkedin />
-          </a>
-        </div>
-        <ModeToggle class="footer__icons__link" />
+    <div class="repel">
+      <div class="footer__icons text-sm cluster">
+        <span>Elsewhere:</span>
+        <a
+          href="https://bsky.app/profile/mxbranch.com"
+          class="footer__icons__link"
+          target="_blank"
+        >
+          <Bsky />
+        </a>
+        <a
+          href="https://codeberg.org/mxbranch"
+          class="footer__icons__link"
+          target="_blank"
+        >
+          <Codeberg />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/d-r-branch/"
+          class="footer__icons__link"
+          target="_blank"
+        >
+          <Linkedin />
+        </a>
       </div>
-      <div class="footer__text text-sm repel">
-        <a href="#top">Back To Top</a>
-        <a href="/colophon/">Colophon</a>
-        <div>A better, more human web is possible!</div>
-        <div>
-          Made with 💙 on the South Coast of the UK - {new Date().getFullYear()}
-        </div>
+      <ModeToggle class="footer__icons__link" />
+    </div>
+    <div class="footer__text text-sm repel">
+      <a href="#top">Back To Top</a>
+      <a href="/colophon/">Colophon</a>
+      <div>A better, more human web is possible!</div>
+      <div>
+        Made with 💙 on the South Coast of the UK - {new Date().getFullYear()}
       </div>
     </div>
+    <!-- Image out of document flow -->
+    <Image
+      class="footer__watermark"
+      src={watermark}
+      alt=""
+      quality="high"
+      loading="lazy"
+      width={256}
+    />
   </div>
 </footer>

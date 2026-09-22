@@ -4,7 +4,7 @@ import Callout from '#/components/callout.astro'
 ---
 
 <Root title="About Me">
-  <div class="flow prose">
+  <section class="flow prose">
     <h1>About Me</h1>
     <Callout class="prose__fullwidth">
       Looking for something more formal and/or detailed? <a
@@ -15,22 +15,15 @@ import Callout from '#/components/callout.astro'
       </a>
     </Callout>
     <p>
-      I started working with the web at the tender age of 13 making websites to
-      host my serious literature<sup>*</sup>. Since then I've studied electronic
-      hardware design at Southampton University, worked as a secondary school
-      Computer Science teacher for seven years, and returned to web development.
-    </p><p>
-      Suffice to say, I've been thinking about computers and the web for a <em>
-        long time
-      </em>, and my time as a teacher has also given me the skillset to explain
-      the tools, technology, and techniques I use to clients and project
-      stakeholders.
+      I've come a long way since the early days of my dabbling with the web and
+      have found myself settling quite happily into a niche of full stack
+      developer with a keen fascination with the front end. Here's a short
+      summary of my professional history in &lt;div&gt; wrangling:
     </p>
-    <p class="text-sm">* Nintendo fanfiction</p>
-  </div>
+  </section>
   <section class="with-sidebar">
     <div class="sidebar flow">
-      <h2>Work History</h2>
+      <h2>Work</h2>
     </div>
     <div class="flow">
       <h3>???</h3>
@@ -81,33 +74,44 @@ import Callout from '#/components/callout.astro'
       </p>
     </div>
     <div class="flow">
-      <h3>Web Fundamentals</h3>
+      <h3>The Fundamentals</h3>
       <ul role="list">
-        <li>Use of semantic HTML</li>
-        <li>Modern CSS features and methodologies</li>
-        <li>Tailwind</li>
-        <li>Vanilla JavaScript + TypeScript</li>
+        <li>Semantic HTML (from navs to sections to footers)</li>
+        <li>
+          Modern CSS features and methodologies <span class="text-sm">
+            (and Tailwind if we've got to)
+          </span>
+        </li>
+        <li>
+          Vanilla JavaScript + TypeScript, in the browser and on the server
+        </li>
       </ul>
       <h3>Frameworks</h3>
       <ul role="list">
-        <li>React + Next.js (App Router + Server Components)</li>
+        <li>React (SPAs or full-stack apps with Next.js)</li>
         <li>Astro</li>
-        <li>CMSs (Payload)</li>
+        <li>
+          CMSs (Payload, <a
+            href="https://www.404media.co/tag/wordpress/"
+            target="_blank"
+          >
+            <s>WordPress</s>
+          </a>)
+        </li>
       </ul>
-      <h3>Back End</h3>
+      <h3>On The Back End</h3>
       <ul role="list">
         <li>Node</li>
         <li>REST APIs</li>
-        <li>ORMs (Drizzle, Prisma)</li>
         <li>SQL + MySQL/MariaDB/Postgres</li>
+        <li>ORMs (Drizzle, Prisma)</li>
         <li>Docker</li>
         <li>Linux Servers</li>
       </ul>
-      <h3>Design</h3>
+      <h3>Thinking Beyond Code</h3>
       <ul role="list">
-        <li>Design Systems and Component Libraries</li>
         <li>Accessibility in Web Design</li>
-        <li></li>
+        <li>Design Systems and Component Libraries</li>
       </ul>
     </div>
   </section>
