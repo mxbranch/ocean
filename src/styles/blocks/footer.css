@@ -6,6 +6,7 @@
   width: 100%;
   position: relative;
   isolation: isolate;
+  overflow: clip;
 }
 
 .footer__waves {
@@ -22,7 +23,23 @@
 }
 
 .footer__content {
+  position: relative;
   background-color: var(--paper);
+}
+
+.footer__watermark {
+  position: absolute;
+  opacity: 0.3;
+  right: -12rem;
+  bottom: -6rem;
+  rotate: 0deg;
+  z-index: -5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .footer__watermark {
+    animation: footer-watermark-rotate 90s linear infinite;
+  }
 }
 
 .footer__illustration {
@@ -32,6 +49,7 @@
   object-position: var(--footer-illustration-x, 50%)
     var(--footer-illustration-y, 50%);
   border-radius: var(--border-radius);
+  border: 1px solid oklch(from var(--lowlight) l c h / 0.3);
 }
 
 .footer__rows {
@@ -76,4 +94,14 @@
 
 .footer__text {
   padding-block-end: var(--space-m);
+}
+
+@keyframes footer-watermark-rotate {
+  from {
+    rotate: 360deg;
+  }
+
+  to {
+    rotate: 0deg;
+  }
 }

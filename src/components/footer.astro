@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets'
 import bocean from '#/assets/bocean.jpg'
+import watermark from '#/assets/watermark.svg'
 
 import Bsky from '#/components/icon/bsky.astro'
 import Codeberg from '#/components/icon/codeberg.astro'
@@ -10,9 +11,17 @@ import ModeToggle from '#/components/mode-toggle.astro'
 // #/styles/blocks/footer.css
 ---
 
-<footer class="footer | float-bottom">
+<footer class="footer float-bottom">
   <div class="footer__waves"></div>
   <div class="container footer__content">
+    <Image
+      class="footer__watermark"
+      src={watermark}
+      alt=""
+      quality="high"
+      loading="lazy"
+      width={256}
+    />
     <Image
       class="footer__illustration"
       src={bocean}
