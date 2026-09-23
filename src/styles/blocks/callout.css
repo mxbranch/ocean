@@ -5,7 +5,7 @@
   font-size: var(--step--1);
 }
 
-.callout ::selection {
+.callout::selection {
   background-color: var(--lowlight);
   color: var(--paper);
 }
