@@ -2,9 +2,9 @@
 
 @import './reset.css' layer(reset);
 
+@import './tokens/animation.css' layer(tokens);
 @import './tokens/colours.css' layer(tokens);
 @import './tokens/spacing.css' layer(tokens);
-@import './tokens/timing.css' layer(tokens);
 @import './tokens/typography.css' layer(tokens);
 
 @import './global.css' layer(global);

@@ -1,0 +1,14 @@
+:root {
+  --transition-m: 250ms;
+  --transition-l: 1s;
+}
+
+@keyframes rotate-counterclockwise {
+  from {
+    rotate: 360deg;
+  }
+
+  to {
+    rotate: 0deg;
+  }
+}
