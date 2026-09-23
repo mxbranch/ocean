@@ -9,6 +9,11 @@
   flex-grow: 1;
 }
 
+.sidebar[data-center] {
+  display: flex;
+  align-items: center;
+}
+
 .with-sidebar :not(.sidebar) {
   flex-basis: 0;
   flex-grow: 999;

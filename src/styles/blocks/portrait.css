@@ -1,0 +1,74 @@
+.portrait {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  isolation: isolate;
+
+  & > img {
+    width: 85%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    margin-inline: auto;
+    user-select: none;
+    rotate: 0deg;
+    transition-property: rotate;
+    transition-duration: var(--transition-m);
+    border: 1px solid oklch(from var(--lowlight) l c h / 0.3);
+  }
+
+  & > img:hover {
+    rotate: -2deg;
+  }
+}
+
+/* Waves border */
+.portrait::before {
+  content: '';
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  grid-column-start: 1;
+  grid-row-start: 1;
+
+  z-index: -10;
+  background: var(--surface);
+  mask-image: url('/bank-note.svg');
+}
+
+.portrait__emoji {
+  --radius: 0rem;
+  --degrees: 0deg;
+  --y: calc(sin(var(--degrees)) * var(--radius));
+  --x: calc(cos(var(--degrees)) * var(--radius));
+
+  grid-row-start: 1;
+  grid-column-start: 1;
+  width: 1ch;
+  font-size: 3rem;
+  margin-inline: auto;
+  text-align: center;
+  z-index: -5;
+  pointer-events: none;
+
+  translate: 0 0;
+  rotate: 0deg;
+  transition-property: translate rotate;
+  transition-duration: 500ms;
+  transition-duration: calc(500ms + sibling-index() * 250ms);
+  transition-timing-function: ease-in-out;
+}
+
+.portrait__emoji:has(~ *:hover) {
+  --radius: 12.5rem;
+  /* Magic Number - Wheee */
+  rotate: -362deg;
+  translate: var(--x, 10rem) var(--y, 10rem);
+}

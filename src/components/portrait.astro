@@ -1,0 +1,18 @@
+---
+import drb from '#/assets/drb.jpg'
+import { Image } from 'astro:assets'
+---
+
+<div class="portrait">
+  <div class="portrait__emoji">🌊</div>
+  <div class="portrait__emoji" style="--degrees: 120deg;">🎹</div>
+  <div class="portrait__emoji" style="--degrees: 240deg;">🐈</div>
+  <Image
+    src={drb}
+    width={300}
+    alt="A photo of D. R. Branch"
+    loading="eager"
+    quality="mid"
+    layout="constrained"
+  />
+</div>

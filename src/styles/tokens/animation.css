@@ -1,6 +1,6 @@
 :root {
   --transition-m: 250ms;
-  --transition-l: 1s;
+  --transition-l: 750ms;
 }
 
 @keyframes rotate-counterclockwise {

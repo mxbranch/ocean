@@ -1,7 +1,7 @@
 ---
 import Root from '#/layout/root.astro'
 import CaseStudyGrid from '#/components/case-study-grid.astro'
-import drb from '#/assets/drb.jpg'
+import Portrait from '#/components/portrait.astro'
 import { Image } from 'astro:assets'
 ---
 
@@ -35,16 +35,8 @@ import { Image } from 'astro:assets'
       </p>
       <p class="text-sm">* Nintendo fanfiction</p>
     </div>
-    <div class="sidebar">
-      <Image
-        class="hero__image"
-        src={drb}
-        width={300}
-        alt="D. R. Branch"
-        loading="eager"
-        quality="mid"
-        layout="constrained"
-      />
+    <div class="sidebar" data-center>
+      <Portrait />
     </div>
   </section>
   <section class="flow">
