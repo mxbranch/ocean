@@ -30,7 +30,7 @@ const pathname = Astro.url.pathname
 
   <title>{seoTitle}</title>
 
-  <script is:inline>
+  <script>
     function getThemeMode() {
       const localStorageTheme = localStorage?.getItem('theme') ?? ''
       if (['dark', 'light'].includes(localStorageTheme)) {
@@ -50,8 +50,8 @@ const pathname = Astro.url.pathname
   </script>
   <script is:inline>
     document.documentElement.classList.replace('no-js', 'js')
+    console.log('Hullo, console log viewer! - DRB')
   </script>
-
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
