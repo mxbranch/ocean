@@ -18,6 +18,10 @@ body[data-style='minimal'] {
   justify-content: center;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 .main {
   display: flex;
   flex-direction: column;
