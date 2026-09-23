@@ -47,8 +47,8 @@
 .portrait__emoji {
   --radius: 20cqi;
   --degrees: 0deg;
-  --y: calc(sin(var(--degrees)) * var(--radius));
   --x: calc(cos(var(--degrees)) * var(--radius));
+  --y: calc(sin(var(--degrees)) * var(--radius));
 
   grid-row-start: 1;
   grid-column-start: 1;
@@ -59,19 +59,20 @@
   z-index: -5;
   pointer-events: none;
 
-  translate: var(--x, 0rem) var(--y, 0rem);
+  translate: var(--x) var(--y);
   rotate: 0deg;
   scale: 0.1;
 
   transition-property: translate, rotate, scale;
   transition-duration: 500ms;
-  transition-duration: calc(500ms + sibling-index() * 250ms);
-  transition-timing-function: ease-in-out;
+  transition-duration: calc(500ms + sibling-index() * 300ms);
+  transition-timing-function: ease;
 }
 
 .portrait__emoji:has(~ *:hover) {
   --radius: 55cqi;
+  /*translate: var(--x) var(--y);*/
   /* Magic Number - Wheee */
   rotate: -362deg;
-  scale: 1.1;
+  scale: 1;
 }
