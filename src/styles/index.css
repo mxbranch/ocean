@@ -1,4 +1,4 @@
-@layer reset, tokens, global, composition, utility, block;
+@layer reset, tokens, global, composition, block, utility;
 
 @import './reset.css' layer(reset);
 
@@ -15,12 +15,6 @@
 @import './compositions/repel.css' layer(composition);
 @import './compositions/sidebar.css' layer(composition);
 
-@import './utilities/container.css' layer(utility);
-@import './utilities/font.css' layer(utility);
-@import './utilities/flex.css' layer(utility);
-@import './utilities/highlight.css' layer(utility);
-@import './utilities/visually-hidden.css' layer(utility);
-
 @import './blocks/callout.css' layer(block);
 @import './blocks/footer.css' layer(block);
 @import './blocks/header.css' layer(block);
@@ -29,3 +23,10 @@
 @import './blocks/portrait.css' layer(block);
 @import './blocks/project-card.css' layer(block);
 @import './blocks/prose.css' layer(block);
+
+@import './utilities/container.css' layer(utility);
+@import './utilities/font.css' layer(utility);
+@import './utilities/flex.css' layer(utility);
+@import './utilities/highlight.css' layer(utility);
+@import './utilities/noscript.css' layer(utility);
+@import './utilities/visually-hidden.css' layer(utility);

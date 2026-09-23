@@ -37,6 +37,7 @@
   rotate: 0deg;
   z-index: -5;
   user-select: none;
+  pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {

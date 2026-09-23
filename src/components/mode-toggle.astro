@@ -1,21 +1,15 @@
 ---
 import SunMoon from './icon/sun-moon.astro'
 
-interface Props {
-  class?: string
-}
-
-const { class: propsClass } = Astro.props
-
 // #/styles/blocks/mode-toggle.css
 ---
 
-<button id="theme-toggle" class={`toggle ${propsClass}`.trim()}>
+<button id="theme-toggle" class="onlyscript toggle">
   <SunMoon />
   Toggle Theme
 </button>
 
-<script is:inline>
+<script>
   function handleToggleClick() {
     const {
       documentElement: { classList },

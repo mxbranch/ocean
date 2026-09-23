@@ -1,0 +1,7 @@
+:root.js .noscript {
+  display: none;
+}
+
+:root.no-js .onlyscript {
+  display: none;
+}

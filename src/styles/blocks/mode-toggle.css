@@ -1,5 +1,31 @@
 .toggle {
   background: unset;
   border: unset;
+  text-decoration: none;
+  color: var(--lowlight);
+  padding-block: var(--space-xs);
+  padding-inline: var(--space-s);
+  display: inline-flex;
+  gap: var(--space-xs);
+  font-size: var(--step--1);
+  transition-property: background-color;
+  transition-duration: var(--transition-m);
+  align-items: center;
+  border-radius: var(--border-radius);
+  flex-shrink: 0;
+  flex-grow: 0;
+
+  & > svg {
+    fill: var(--lowlight);
+    aspect-ratio: 1/1;
+    width: 1rem;
+    height: 1rem;
+    flex-shrink: 0;
+    flex-grow: 0;
+  }
   cursor: pointer;
+}
+
+.toggle:hover {
+  background-color: var(--surface);
 }
