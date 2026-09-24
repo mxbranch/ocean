@@ -1,55 +1,58 @@
-.header__title {
+header {
   padding-block: var(--space-l);
   border-block-end: var(--space-3xs) solid var(--highlight);
-}
 
-a.header__title__link {
-  font-size: 3rem;
-  font-size: var(--step-4);
-  font-family: var(--font-header);
-  font-weight: 600;
-  color: var(--lowlight);
-  text-decoration: none;
-  transition-property: color;
-  transition-duration: var(--transition-m);
-  border-radius: var(--border-radius);
-}
+  & > a {
+    position: relative;
+    display: block;
+    font-size: 3rem;
+    font-size: var(--step-4);
+    font-family: var(--font-header);
+    font-weight: 600;
+    color: var(--lowlight);
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: var(--transition-m);
+    border-radius: var(--border-radius);
+    isolation: isolate;
+  }
 
-a.header__title__link:hover {
-  color: var(--highlight);
-}
+  & > a:hover {
+    color: var(--highlight);
+  }
 
-.header__nav {
-  --gutter: var(--space-2xs);
-}
+  & > nav {
+    --gutter: var(--space-2xs);
 
-.header__nav > *:focus {
-  background-color: var(--surface);
-}
+    & > a {
+      color: var(--ink);
+      text-decoration: none;
+      padding-block: var(--space-2xs);
+      padding-inline: var(--space-xs);
+      display: flex;
+      gap: var(--space-xs);
+      font-size: var(--step-0);
+      transition-property: background-color;
+      transition-duration: var(--transition-m);
+      align-items: center;
+      border-radius: var(--border-radius);
+    }
 
-.header__nav__link {
-  color: var(--ink);
-  text-decoration: none;
-  padding-block: var(--space-2xs);
-  padding-inline: var(--space-xs);
-  display: inline-flex;
-  gap: var(--space-xs);
-  font-size: var(--step-0);
-  transition-property: background-color;
-  transition-duration: var(--transition-m);
-  align-items: center;
-  border-radius: var(--border-radius);
-}
+    & > a:hover {
+      background-color: var(--surface);
+    }
 
-.header__nav__link:hover {
-  background-color: var(--surface);
-}
+    & > a:active {
+      color: var(--highlight);
+    }
 
-.header__nav__link:active {
-  color: var(--highlight);
-}
+    & > a[data-current='true'] {
+      background-color: var(--surface);
+      color: var(--lowlight);
+    }
+  }
 
-.header__nav__link[data-current='true'] {
-  background-color: var(--surface);
-  color: var(--lowlight);
+  & > nav > *:focus {
+    background-color: var(--surface);
+  }
 }

@@ -20,27 +20,19 @@ const navigationLinks: NavLink[] = [
 ]
 ---
 
-<header>
-  <div class="container repel | header__title">
-    <a href="/" class="header__title__link">D. R. Branch</a>
-    <nav class="cluster | header__nav">
-      {
-        navigationLinks.map((link) => {
-          const linkIsHomepage = link.href === '/' && link.href === pathname
-          const linkMatchesCurrentPath =
-            link.href !== '/' && pathname.startsWith(link.href)
-          const current = linkIsHomepage || linkMatchesCurrentPath || undefined
-          return (
-            <a
-              href={link.href}
-              class="header__nav__link"
-              data-current={current}
-            >
-              {link.label}
-            </a>
-          )
-        })
-      }
-    </nav>
-  </div>
+<header class="container repel">
+  <a href="/">D. R. Branch</a>
+  <nav class="cluster">
+    {navigationLinks.map((link) => {
+      const linkIsHomepage = link.href === '/' && link.href === pathname
+      const linkMatchesCurrentPath =
+        link.href !== '/' && pathname.startsWith(link.href)
+      const current = linkIsHomepage || linkMatchesCurrentPath || undefined
+      return (
+        <a href={link.href} data-current={current}>
+          {link.label}
+        </a>
+      )
+    })}
+  </nav>
 </header>
