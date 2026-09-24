@@ -74,7 +74,6 @@
 
 .portrait__emoji:has(~ *:hover) {
   --radius: 55cqi;
-  /*translate: var(--x) var(--y);*/
   /* Magic Number - Wheee */
   rotate: -362deg;
   scale: 1;
