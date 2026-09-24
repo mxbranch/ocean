@@ -2,7 +2,7 @@
   width: var(--container-width, 100svw);
   max-width: var(--container-max-width, 1024px);
   margin-inline: auto;
-  padding-inline: 2ch;
-  padding-inline: var(--container-padding-inline, var(--space-s));
+  padding-inline: 4ch;
+  padding-inline: var(--container-padding-inline, var(--space-m));
   container: wrapper / inline-size;
 }
