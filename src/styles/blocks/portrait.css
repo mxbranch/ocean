@@ -6,6 +6,9 @@
   grid-template-rows: 1fr;
   align-items: center;
   isolation: isolate;
+  max-width: 32rem;
+  margin-inline: auto;
+  margin-block: var(--space-m);
 
   & > img {
     width: 85%;
