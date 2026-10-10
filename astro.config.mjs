@@ -35,5 +35,11 @@ export default defineConfig({
   }),
 
   trailingSlash: 'always',
-  integrations: [sitemap()],
+
+  integrations: [
+    sitemap({
+      filter: (page) =>
+        !page.startsWith('https://www.mxbranch.com/cookie-gate'),
+    }),
+  ],
 })
