@@ -3,6 +3,8 @@ import { defineConfig, fontProviders } from 'astro/config'
 
 import netlify from '@astrojs/netlify'
 
+import sitemap from '@astrojs/sitemap'
+
 // https://astro.build/config
 export default defineConfig({
   fonts: [
@@ -21,7 +23,9 @@ export default defineConfig({
       weights: ['300 700'],
     },
   ],
+
   site: 'https://www.mxbranch.com',
+
   adapter: netlify({
     devFeatures: {
       environmentVariables: true,
@@ -29,5 +33,7 @@ export default defineConfig({
       edgeFunctions: false,
     },
   }),
+
   trailingSlash: 'always',
+  integrations: [sitemap()],
 })
