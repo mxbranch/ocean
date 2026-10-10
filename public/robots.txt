@@ -167,3 +167,5 @@ User-agent: YiyanBot
 User-agent: YouBot
 User-agent: ZanistaBot
 Disallow: /
+
+Sitemap: https://www.mxbranch.com/sitemap-index.xml
