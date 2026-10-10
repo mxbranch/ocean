@@ -14,13 +14,14 @@
     "deploy:prod": "netlify deploy --prod"
   },
   "dependencies": {
-    "@astrojs/netlify": "^8.2.6",
-    "astro": "^7.3.5"
+    "@astrojs/netlify": "^8.2.9",
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.3.8"
   },
   "devDependencies": {
-    "netlify-cli": "^27.10.2",
+    "netlify-cli": "^27.12.0",
     "prettier": "^3.9.9",
-    "prettier-plugin-astro": "^1.1.0",
+    "prettier-plugin-astro": "^1.1.1",
     "sharp": "^0.35.5",
     "typescript": "^6.0.3"
   }
