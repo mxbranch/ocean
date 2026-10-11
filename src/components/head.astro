@@ -1,6 +1,6 @@
 ---
 import { Font } from 'astro:assets'
-import '#/styles/index.css'
+import stylesheet from '#/styles/index.css?url'
 
 export interface Props {
   title?: string
@@ -30,6 +30,8 @@ const pathname = Astro.url.pathname
 
   <title>{seoTitle}</title>
 
+  <link rel="preload" href={stylesheet} as="style" />
+
   <script>
     function getThemeMode() {
       const localStorageTheme = localStorage?.getItem('theme') ?? ''
@@ -54,6 +56,8 @@ const pathname = Astro.url.pathname
   </script>
   <link rel="icon" type="image/png" href="/favicon.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <link rel="stylesheet" href={stylesheet} />
 
   <link rel="canonical" href={`https://${Astro.site?.host}${pathname}`} />
   <link rel="me" href="https://bsky.app/profile/mxbranch.com" />
