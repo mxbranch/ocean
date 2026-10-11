@@ -44,7 +44,7 @@
 
   z-index: -10;
   background: var(--surface);
-  mask-image: url('/bank-note.svg');
+  mask-image: var(--bg-waves);
 }
 
 .portrait__emoji {

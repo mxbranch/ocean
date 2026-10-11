@@ -17,7 +17,7 @@
     transparent 10%,
     var(--surface)
   );
-  mask-image: url('/bank-note.svg');
+  mask-image: var(--bg-waves);
   z-index: -10;
 }
 
