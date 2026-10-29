@@ -3,6 +3,8 @@
   background-color: var(--surface);
   border-radius: var(--border-radius);
   padding: var(--space-xs);
+
+  position: relative;
 }
 
 .projectcard__image {
@@ -19,6 +21,7 @@
     user-select: none;
     transition-property: scale;
     transition-duration: var(--transition-l);
+    will-change: scale;
   }
 }
 
@@ -33,4 +36,14 @@
 .projectcard ::selection {
   background-color: var(--lowlight);
   color: var(--paper);
+}
+
+.projectcard > a {
+  display: block;
+}
+
+.projectcard > a::before {
+  content: '';
+  position: absolute;
+  inset: 0;
 }
