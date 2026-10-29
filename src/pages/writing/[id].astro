@@ -1,0 +1,30 @@
+---
+import Root from '#/layout/root.astro'
+import { getCollection, render } from 'astro:content'
+
+export async function getStaticPaths() {
+  const notes = await getCollection('notes')
+  return notes.map((note) => ({
+    params: { id: note.id },
+    props: { note },
+  }))
+}
+
+const { note } = Astro.props
+const { Content } = await render(note)
+---
+
+<Root title={note.data.title} description={note.data.subtitle}>
+  <article class="prose flow">
+    <h1>{note.data.title}</h1>
+    <p class="text-lg">{note.data.subtitle}</p>
+    <p class="text-sm">
+      Written on {note.data.pubDate.toLocaleDateString()}
+      {note.data.lastUpdated && (
+        <> and last updated on {note.data.lastUpdated.toLocaleDateString()}</>
+      )}
+    </p>
+    <hr />
+    <Content />
+  </article>
+</Root>

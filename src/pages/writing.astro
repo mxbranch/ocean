@@ -1,0 +1,40 @@
+---
+import Root from '#/layout/root.astro'
+import { getCollection } from 'astro:content'
+import construction from '#/assets/underconstruction.gif'
+import { Image } from 'astro:assets'
+
+const notes = await getCollection('notes')
+const sortedNotes = notes.toSorted((a, b) => {
+  return b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+})
+---
+
+<Root title="Writing & Notes">
+  <h1>Writing & Notes</h1>
+  <section class="writinglist">
+    {sortedNotes.length === 0 && (
+      <Image
+        src={construction}
+        alt="Under Construction"
+        class="center construction"
+        loading="eager"
+      />
+    )}
+    {sortedNotes.map((note) => (
+      <article class="flow">
+        <a href={`/writing/${note.id}/`}>{note.data.title}</a>
+        <p>{note.data.subtitle}</p>
+        <p class="text-sm">
+          Written on {note.data.pubDate.toLocaleDateString()}
+          {note.data.lastUpdated && (
+            <>
+              {' '}
+              and last updated on {note.data.lastUpdated.toLocaleDateString()}
+            </>
+          )}
+        </p>
+      </article>
+    ))}
+  </section>
+</Root>

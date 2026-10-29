@@ -1,0 +1,13 @@
+.writinglist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+.writinglist > article {
+  --flow-spacing: 1rem;
+}
+
+.writinglist > article > a {
+  font-size: var(--step-2);
+}
