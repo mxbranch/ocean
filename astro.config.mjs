@@ -20,7 +20,23 @@ export default defineConfig({
       styles: ['normal', 'italic'],
       weights: ['300 700'],
     },
+    {
+      name: 'Chivo Mono',
+      cssVariable: '--font-mono',
+      provider: fontProviders.fontsource(),
+      styles: ['normal'],
+      weights: ['400'],
+    },
   ],
+
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'catppuccin-latte',
+        dark: 'catppuccin-frappe',
+      },
+    },
+  },
 
   site: 'https://www.mxbranch.com',
 

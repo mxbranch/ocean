@@ -141,3 +141,22 @@ ul[role='list'] > li + li {
   max-width: 512px;
   image-rendering: pixelated;
 }
+
+.astro-code {
+  font-size: var(--step--1);
+  padding: var(--space-xs);
+  border-radius: var(--border-radius);
+}
+
+.dark .astro-code,
+.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+code {
+  font-family: var(--font-mono);
+}
