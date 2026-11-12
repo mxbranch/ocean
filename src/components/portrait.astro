@@ -4,9 +4,15 @@ import { Image } from 'astro:assets'
 ---
 
 <div class="portrait">
-  <div class="portrait__emoji">🌊</div>
-  <div class="portrait__emoji" style="--degrees: 120deg;">🎹</div>
-  <div class="portrait__emoji" style="--degrees: 240deg;">🐈</div>
+  <div class="portrait__emoji" style="--degrees:-30deg;">
+    🌊
+  </div>
+  <div class="portrait__emoji" style="--degrees: 90deg;">
+    🎹
+  </div>
+  <div class="portrait__emoji" style="--degrees: 210deg;">
+    🐈
+  </div>
   <Image
     src={drb}
     width={300}
