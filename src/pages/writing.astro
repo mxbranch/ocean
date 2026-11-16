@@ -26,12 +26,9 @@ const sortedNotes = notes.toSorted((a, b) => {
         <a href={`/writing/${note.id}/`}>{note.data.title}</a>
         <p>{note.data.subtitle}</p>
         <p class="text-sm">
-          Written on {note.data.pubDate.toLocaleDateString()}
+          Written on {note.data.pubDate.toDateString()}
           {note.data.lastUpdated && (
-            <>
-              {' '}
-              and last updated on {note.data.lastUpdated.toLocaleDateString()}
-            </>
+            <> and last updated on {note.data.lastUpdated.toISOString()}</>
           )}
         </p>
       </article>

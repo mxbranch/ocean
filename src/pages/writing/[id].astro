@@ -19,9 +19,9 @@ const { Content } = await render(note)
     <h1>{note.data.title}</h1>
     <p class="text-lg">{note.data.subtitle}</p>
     <p class="text-sm">
-      Written on {note.data.pubDate.toLocaleDateString()}
+      Written on {note.data.pubDate.toDateString()}
       {note.data.lastUpdated && (
-        <> and last updated on {note.data.lastUpdated.toLocaleDateString()}</>
+        <> and last updated on {note.data.lastUpdated.toDateString()}</>
       )}
     </p>
     <hr />
