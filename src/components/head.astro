@@ -26,12 +26,11 @@ const pathname = Astro.url.pathname
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="text-scale" content="scale" />
-
   <title>{seoTitle}</title>
 
-  <link rel="preload" href={stylesheet} as="style" />
-
+  <script is:inline>
+    document.documentElement.classList.replace('no-js', 'js')
+  </script>
   <script>
     function getThemeMode() {
       const localStorageTheme = localStorage?.getItem('theme') ?? ''
@@ -49,12 +48,18 @@ const pathname = Astro.url.pathname
     } else {
       document.documentElement.classList.remove('dark')
     }
-    document.documentElement.classList.replace('no-js', 'js')
   </script>
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <link rel="stylesheet" href={stylesheet} />
+  {/* Fonts */}
+  <Font cssVariable="--font-header" preload />
+  <Font cssVariable="--font-sans" preload />
+  <Font cssVariable="--font-mono" />
+
+  <meta name="text-scale" content="scale" />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
   <link rel="canonical" href={`https://${Astro.site?.host}${pathname}`} />
   <link rel="me" href="https://bsky.app/profile/mxbranch.com" />
@@ -70,13 +75,8 @@ const pathname = Astro.url.pathname
   />
   <meta property="og:type" content="website" />
 
-  <meta name="color-scheme" content="light only" />
+  <meta name="color-scheme" content="light dark" />
   <meta name="theme-color" content="#005bae" />
-
-  {/* Fonts */}
-  <Font cssVariable="--font-header" preload />
-  <Font cssVariable="--font-sans" preload />
-  <Font cssVariable="--font-mono" />
 
   <link rel="sitemap" href="/sitemap-index.xml" />
 </head>
